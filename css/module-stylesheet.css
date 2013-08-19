@@ -23,14 +23,14 @@
 }
 
 .slidesjs-pagination {
-	margin: 6px 0 0;
+	margin: 6px 6px 0;
 	float: right;
 	list-style: none;
 }
 
 .slidesjs-pagination li {
 	float: left;
-	margin: 0 1px;
+	margin: 0 3px;
 }
 
 /* this selector formats the page numbers for the slider */
