@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 19, 2013 at 01:34 PM
+-- Generation Time: Aug 20, 2013 at 08:59 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.16
 
@@ -293,7 +293,7 @@ INSERT INTO `steps` (`ID`, `moduleID`, `step-number`, `image-path`, `step-descri
 (14, 7, 3, 'module-images/instruction-img/minecraft/nand-minecraft-3.png', 'Place a line of Redstone leading off of the Redstone on the middle block.', NULL, NULL, NULL),
 (15, 8, 1, 'module-images/instruction-img/minecraft/xor-minecraft-1.png', 'Place two levers three blocks apart.  Lead a Redstone line out of the levers and in one block.', NULL, NULL, NULL),
 (16, 8, 2, 'module-images/instruction-img/minecraft/xor-minecraft-2.png', 'Place blocks with Redstone Torches on them at the ends of the Redstone lines.', NULL, NULL, NULL),
-(17, 8, 3, 'module-images/instruction-img/xor-minecraft-3.png', 'Place lines of Redstone between the two blocks at the end of the Redstone lines.  Place another line in front of the two end blocks.   In the middle bring the line one block forward.  This is your output.', NULL, NULL, NULL),
+(17, 8, 3, 'module-images/instruction-img/minecraft/xor-minecraft-3.png', 'Place lines of Redstone between the two blocks at the end of the Redstone lines.  Place another line in front of the two end blocks.   In the middle bring the line one block forward.  This is your output.', NULL, NULL, NULL),
 (18, 2, 1, 'module-images/instruction-img/not-minecraft-1.png', 'Place a lever with a line of Redstone leading out of it.', NULL, NULL, NULL),
 (19, 2, 2, 'module-images/instruction-img/not-minecraft-2.png', 'Place a block with a Redstone torch on the side of the block.', NULL, NULL, NULL),
 (20, 2, 3, 'module-images/instruction-img/minecraft/not-minecraft-3.png', 'Put a Redstone line coming off of the torch.', NULL, NULL, NULL),
