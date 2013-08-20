@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
+	<link rel="stylesheet" type="text/CSS" href="dev-style.css"/>
+</head>
 <body>
     <?php
             $username = $_POST['user'];
@@ -9,33 +11,38 @@
 			if (mysqli_connect_errno($con))
 			{
 				die("incorrect username or password");
-			}
-			echo "Welcome, what would you like to do?";
-			
+			}	
     ?>
-	<br /><br />
-		<form name="input" action="new-module-form.php" method="get">
-		<p>Would you like to upload a new Module?
-		<p>What type of module do you want to upload?</p>
-		<a href="">Lego<a/>|
-		<a href="">Junk</a>|
-		<a href="">Art</a>|
-		<a href="">Code</a>|
-		or <a href="">Minecraft</a>
-		</form>
-		<br />
-		<br />
-		
-	Do you want to delete a module?<br />
-	Module Name:<input type="text" name="delete-module"/>
-	<br/>
-	<br/>
-	Or do you want to edit a module?<br/>
-	Module Name:<input type="text" name="edit-module"/>
-	
+		<p id="title">Welcome to the developers page, what would you like to do?</p>
+		<a id="logout" href="dev-page.php">Logout</a>
+		<table cellpadding="10">
+			<tr>
+				<td style="padding-left:40px">
+					<form name="input" action="dev-new-module.php" method="get">
+					<p>Would you like to upload a new Module?
+					<p>What type of module do you want to upload?</p>
+						<input type="radio" name="type" value=1 checked> Junk<br>
+						<input type="radio" name="type" value=2> Lego<br>
+						<input type="radio" name="type" value=3> Art<br/>
+						<input type="radio" name="type" value=4> Code<br/>
+						<input type="radio" name="type" value=5> Minecraft<br/><br/>	
+						<input type="submit" value="Go!">
+					</form>
+					</form>
+				</td style="padding-left:40px">
+				<td>
+					Do you want to delete a module?<br />
+					<input type="text" name="delete-module" value="Module name">
+				</td>
+				<td style="padding-left:40px">
+					Or do you want to edit a module?<br/>
+					<input type="text" name="edit-module" value="Module name"/>
+					
+				</td>
+			</tr>
+		</table>
 	<br/>
 	<p>These are all the existing modules:
-	<ul>
 	<?php
 	echo "<table><tr>";
 	echo "<td><ul>";
@@ -55,7 +62,7 @@
 	while($module = mysqli_fetch_array($temp)) {
 	 "moduleArray[".$i."]=\"" . $module["name"]."\";" ;
 		$i++;
-		echo "<li  style='border:1px solid black'>" . $module["name"] . "</li>";
+		echo "<li>" . $module["name"] . "</li>";
 	}
 		echo "</ul></td>";
 		echo "<td><ul>";
@@ -65,7 +72,7 @@
 	while($module = mysqli_fetch_array($temp)) {
 	 "moduleArray[".$i."]=\"" . $module["name"]."\";" ;
 		$i++;
-		echo "<li  style='border:1px solid black'>" . $module["name"] . "</li>";
+		echo "<li>" . $module["name"] . "</li>";
 	}
 		echo "</ul></td>";
 		echo "<td><ul>";
@@ -75,7 +82,7 @@
 	while($module = mysqli_fetch_array($temp)) {
 	 "moduleArray[".$i."]=\"" . $module["name"]."\";" ;
 		$i++;
-		echo "<li  style='border:1px solid black'>" . $module["name"] . "</li>";
+		echo "<li>" . $module["name"] . "</li>";
 	}
 		echo "</ul></td>";
 		echo "<td><ul>";
@@ -85,7 +92,7 @@
 	while($module = mysqli_fetch_array($temp)) {
 	 "moduleArray[".$i."]=\"" . $module["name"]."\";" ;
 		$i++;
-		echo "<li  style='border:1px solid black'>" . $module["name"] . "</li>";
+		echo "<li>" . $module["name"] . "</li>";
 	}
 		echo "</ul></td>";
 	
