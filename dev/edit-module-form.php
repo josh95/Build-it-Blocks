@@ -10,16 +10,17 @@ enctype="multipart/form-data">
 $modulename = $_GET['module-name']; //get the module name, as typed in by user on previous page.
 include("../db-connect.php");
 $temp = mysqli_query($con, "SELECT * FROM `module_index` WHERE `name` = \"" . $modulename ."\"");
-if($temp == null){ //could not find the module based on the name the user typed
+$module = mysqli_fetch_array($temp);
+if($module["name"] == null){ //could not find the module based on the name the user typed
 	die("You typed the module name wrong. Please try again");
 }
 //if program did not die, user must have typed the name correctly. Proceed. 
-$module = mysqli_fetch_array($temp);
-echo  "cool cool" . $module["ID"];
-?>
 
+echo  "You are editing the " . $module["name"];
+?>
+<br>
 Fields to Change: <br>
-Module Name (mandatory field): <input type="text" name="module-name"><br>
+Module Name: <input type="text" name="modulename"><br>
 Difficulty: <input type="text" name="difficulty"><br>
 Subcategory: <br>
 

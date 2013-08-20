@@ -1,13 +1,22 @@
 <?php
-$modulename = $_POST['module-name']; //get the module name, as typed in by user on previous page.
 include("../db-connect.php");
-$temp = mysqli_query($con, "SELECT * FROM `module_index` WHERE `name` = \"" . $modulename ."\"");
-if($temp == null){ //could not find the module based on the name the user typed
-	die("You typed the module name wrong. Please try again");
+
+if ($_POST['difficulty'] != null){
+	$difficulty= $_POST['difficulty'];
+	echo "changed difficulty to " . $difficulty. "<br>";
+	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `difficulty` = ". $difficulty . " WHERE `module_index`.`ID` =1"); //1 should equal moduleID as given by previous page
 }
-//if program did not die, user must have typed the name correctly. Proceed. 
-$module = mysqli_fetch_array($temp);
-echo  "cool cool" . $module["ID"];
+else
+echo "No change to difficulty <br>";
+
+
+if ($_POST['modulename'] != null){
+	$name= $_POST['modulename'];
+	echo "changed Module's name to " . $name. "<br>";
+	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `name` = \"". $name . "\" WHERE `module_index`.`ID` =1"); //1 should equal moduleID as given by previous page
+}
+else
+echo "No change to Module Name <br>";
 
 
 $allowedExts = array("gif", "jpeg", "jpg", "png");
