@@ -18,6 +18,7 @@ if ($_POST['modulename'] != null){
 else
 echo "No change to Module Name <br>";
 
+echo "module ID: " . $_POST['moduleid'];
 
 $allowedExts = array("gif", "jpeg", "jpg", "png");
 $temp = explode(".", $_FILES["icon"]["name"]);

@@ -24,16 +24,22 @@ Module Name: <input type="text" name="modulename"><br>
 Difficulty: <input type="text" name="difficulty"><br>
 Subcategory: <br>
 
-<?php/*
-	$type = $_POST['type']; //need to get the selected type from the previous page to display correct subcategories
+<?php
+	$modulename = $_GET['module-name']; //get the module name, as typed in by user on previous page.
+	include("../db-connect.php");
+	$temp = mysqli_query($con, "SELECT * FROM `module_index` WHERE `name` = \"" . $modulename ."\"");
+	$module = mysqli_fetch_array($temp);
+
+
+	$type = $module['type']; //need to get the selected type from the previous page to display correct subcategories
 
 	include("../db-connect.php");
 	$temp = mysqli_query($con, "SELECT * from `category_table` WHERE `typeID`=" . $type);
 	while($cat=mysqli_fetch_array($temp)){
-		echo $cat['subcategoryID']+$cat['name'];
-	}*/
+		echo $cat['subcategoryID'] . $cat['name'] . "<input type='radio' name='subcategoryID' value=". $cat['subcategoryID'] .">";
+	}
 ?>
-
+<br>
 Author: <br> <!--will use php to generate the list of authors as radio buttons-->
 
 
@@ -51,7 +57,10 @@ Author: <br> <!--will use php to generate the list of authors as radio buttons--
 
 Download Type(optional unless previous field is filled): <input type="text" name="download-type"><br>
 
-<input type="submit" value="Okay!">
+<input type="hidden" name="moduleid" value="5 "> <!--hidden types pass on a post variable to next page that user does not input-->
+												<!--in this case, we pass the moduleID which the developer might not know-->
+
+<input type="submit"  value="Okay">
 
 </form>
 </body>
