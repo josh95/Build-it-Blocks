@@ -31,8 +31,11 @@
 					</form>
 				</td style="padding-left:40px">
 				<td>
+					<form name="input" action="delete-module-form.php" method="get">
 					Do you want to delete a module?<br />
-					<input type="text" name="delete-module" value="Module name">
+					<input type="text" name="delete" value="Module name">
+					</form>
+					</form>
 				</td>
 				<td style="padding-left:40px">
 					Or do you want to edit a module?<br/>

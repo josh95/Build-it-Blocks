@@ -15,8 +15,11 @@
 		include("../db-connect.php");
 		$temp = mysqli_query($con, "SELECT * FROM `category_table` WHERE `typeID` = $type");
 		while ($type1 = mysqli_fetch_array($temp)) {
-			echo "<input type='radio'><br/>";
+			
+			echo "<input type='radio'>";
 			echo $type1["name"];
+			echo "<br/>";
+			
 		}
 		
 	?>
@@ -31,7 +34,7 @@
 	Number of steps:<input type="integer" name="steps"/><br/>
 	
 	<input type="submit" value="Continue to Overview/Applications"/>
-	<input type="submit" value="Cancel" href="dev-welcome.php/>
+	<a href="dev-welcome.php"><input type="submit" value="Cancel"/></a>
 	
 </body>
 </html
