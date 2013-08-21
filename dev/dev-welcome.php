@@ -21,6 +21,7 @@
 					<form name="input" action="dev-new-module.php" method="post">
 					<p>Would you like to upload a new Module?
 					<p>What type of module do you want to upload?</p>
+					<form action="create-module-form.php" method="post">
 						<input type="radio" name="type" value=1 checked> Junk<br>
 						<input type="radio" name="type" value=2> Lego<br>
 						<input type="radio" name="type" value=3> Art<br/>
