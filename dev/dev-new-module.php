@@ -6,7 +6,10 @@
 <body>
 	<p id="title">Create a New Module</p>
 	<br/>
+	<form name="input" method="get" action="create-module-form.php">
 	Module Name:<input type="text" name="name"/><br/><br/>
+	</form>
+	Module Description: <input type="text" name="description" style="width:180px; height:80px;"/><br /><br />
 	Difficulty:<input type="text" name="difficulty"/><br/><br/>
 	Sub-category:<br/>
 	<?php
