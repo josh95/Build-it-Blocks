@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 21, 2013 at 07:14 PM
+-- Generation Time: Aug 21, 2013 at 07:25 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -61,7 +61,7 @@ INSERT INTO `applications` (`ID`, `moduleID`, `picture`, `description`, `title`,
 (17, 4, 'module-images/applications-img/junk/coin-spillway-overview.png', 'Use this to collect coins into one place. How convenient!', 'Coin Spillway', NULL, NULL),
 (18, 4, 'module-images/applications-img/junk/coin-spillway-make-money.png', 'Get money! Get Paid!', 'Go make that Cash Money!', NULL, NULL),
 (19, 11, 'module-images/applications-img/junk/bridge-overview.png', 'The Premium Quality Junk Yard is on a remote island.  Most people don’t want to live near a dump.  Ugly sights, wicked foul smells, pesky pigeons who haven’t been toilet trained and more messiness! ', 'The Problem', NULL, NULL),
-(20, 11, 'module-images/applications-img/junk/bridge-overview.png', 'Build a beautiful bridge!', 'Your Mission', NULL, NULL),
+(20, 11, 'module-images/applications-img/junk/bridge-overview.png', 'A bridge to support the weight of a truck! A toy one anyways...', 'Your Mission', NULL, NULL),
 (21, 13, 'module-images/applications-img/art/air-head-1.png', 'Many moons into the future, lived a crew of colorful, creative critters.', 'Air Heads', NULL, NULL),
 (22, 13, 'module-images/applications-img/art/air-head-2.png', 'These advanced humanoids evolved from the piles of garbage left by a world full of uncivilized, nat-brained humans.', 'Air Heads', NULL, NULL),
 (23, 13, 'module-images/applications-img/art/air-head-3.png', 'Build-It-Yourself crew members are on a mission to morph premium quality junk into a new generation of super heroes.', 'Air Heads', NULL, NULL),
@@ -163,6 +163,7 @@ CREATE TABLE IF NOT EXISTS `module_index` (
   `partnerID` int(11) DEFAULT NULL,
   `name` varchar(25) DEFAULT NULL,
   `difficulty` int(11) DEFAULT NULL,
+  `description` varchar(200) NOT NULL,
   `date-posted` date DEFAULT NULL,
   `type` int(11) DEFAULT NULL,
   `subcategoryID` int(11) DEFAULT NULL,
@@ -180,20 +181,20 @@ CREATE TABLE IF NOT EXISTS `module_index` (
 -- Dumping data for table `module_index`
 --
 
-INSERT INTO `module_index` (`ID`, `partnerID`, `name`, `difficulty`, `date-posted`, `type`, `subcategoryID`, `authorID`, `popularity`, `icon`, `icon-tooltip`, `icon-alt-text`, `download-link`, `download-type`) VALUES
-(1, 1, 'Clock Gear Train', 2, '2013-06-03', 2, 1, 1, 0, 'module-images/icons/lego-clock.jpg', 'http://1-ps.googleusercontent.com/h/www.catgifpage.com/gifs/186.gif.pagespeed.ce.Z_8F-7SNTG.gif', '', 'http://www.invention-universe.com/val/', 'Schematic'),
-(2, 1, 'NOT Gate', 1, '2013-07-15', 5, 1, 5, 0, 'module-images/icons/minecraft-not.png', 'http://1-ps.googleusercontent.com/h/www.catgifpage.com/gifs/185.gif.pagespeed.ce.yvDfYyj82d.gif', '', 'http://www.invention-universe.com/val/', 'Schematic'),
-(3, 1, 'Junk Catapult', 2, '2013-08-16', 1, 4, 2, 0, 'module-images/icons/junk-catapult-icon.png', 'module-images/icons/tooltip-icons/junk-catapult-overview.png', '', '', ''),
-(4, 1, 'Coin Spillway', 2, '2013-08-16', 1, 5, 2, 0, 'module-images/icons/coin-spillway-icon.png', '', '', '', ''),
-(5, 1, 'AND Gate', 1, '2013-07-18', 5, 1, 1, 0, 'module-images/icons/minecraft-and.png', 'http://www.catgifpage.com/gifs/184.gif', '', 'http://www.invention-universe.com/val/', 'Schematic'),
-(6, 1, 'T-Flip-Flop', 2, '2013-07-18', 5, 1, 5, 0, 'module-images/icons/minecraft-t-flip-flop.png', 'http://www.catgifpage.com/gifs/179.gif', '', '', ''),
-(7, 1, 'NAND Gate', 1, '2013-07-18', 5, 1, 5, 0, 'module-images/icons/minecraft-nand.png', 'http://www.catgifpage.com/gifs/176.gif', '', '', ''),
-(8, 1, 'XOR Gate', 2, '2013-07-18', 5, 1, 5, 0, 'module-images/icons/minecraft-xor.png', 'http://24.media.tumblr.com/532e270364df9a8550381f0820cfcaf3/tumblr_mr0c6b3Wjl1s199fdo1_250.gif', '', '', ''),
-(9, 1, 'Basic motor mount', 1, '2013-08-12', 2, 5, 1, 0, 'module-images/icons/lego-motor-mount.jpg', 'module-images/icons/tooltip-icons/app-lego-motor-mount-overview.jpg', 'Click for instructions.', '', ''),
-(11, 1, 'Cardboard Bridge', 1, '2013-08-16', 1, 5, 2, 0, 'module-images/icons/bridge-icon.png', 'module-images/icons/tooltip-icons/bridge.png', '', '', ''),
-(12, 1, 'Hard Heads', 1, '2013-08-16', 3, 2, 2, 0, 'module-images/icons/hard-heads-icon.png', '', '', '', ''),
-(13, 1, 'Air Heads', 1, '2013-08-16', 3, 2, 2, 0, 'module-images/icons/air-heads-icon.png', '', '', '', ''),
-(14, NULL, 'Vertical Structure', 1, '2013-08-19', 1, 3, 2, 0, 'module-images/icons/vertical-structure.jpg', '', '', '', '');
+INSERT INTO `module_index` (`ID`, `partnerID`, `name`, `difficulty`, `description`, `date-posted`, `type`, `subcategoryID`, `authorID`, `popularity`, `icon`, `icon-tooltip`, `icon-alt-text`, `download-link`, `download-type`) VALUES
+(1, 1, 'Clock Gear Train', 2, 'The spins and stuff', '2013-06-03', 2, 1, 1, 0, 'module-images/icons/lego-clock.jpg', 'http://1-ps.googleusercontent.com/h/www.catgifpage.com/gifs/186.gif.pagespeed.ce.Z_8F-7SNTG.gif', '', 'http://www.invention-universe.com/val/', 'Schematic'),
+(2, 1, 'NOT Gate', 1, 'The NOT gate, otherwise known as an invertor, changes the output of the gate to the opposite of the input.  For instance, if the input is on, the output is off and vice versa.', '2013-07-15', 5, 1, 5, 0, 'module-images/icons/minecraft-not.png', 'http://1-ps.googleusercontent.com/h/www.catgifpage.com/gifs/185.gif.pagespeed.ce.yvDfYyj82d.gif', '', 'http://www.invention-universe.com/val/', 'Schematic'),
+(3, 1, 'Junk Catapult', 2, 'A catapult made from junk. Launch candy!', '2013-08-16', 1, 4, 2, 0, 'module-images/icons/junk-catapult-icon.png', 'module-images/icons/tooltip-icons/junk-catapult-overview.png', '', '', ''),
+(4, 1, 'Coin Spillway', 2, 'A structure to direct your coins', '2013-08-16', 1, 5, 2, 0, 'module-images/icons/coin-spillway-icon.png', '', '', '', ''),
+(5, 1, 'AND Gate', 1, 'The AND gate changes the output of the gate to on when both inputs are on and off when one of the inputs is or when they are both off.', '2013-07-18', 5, 1, 1, 0, 'module-images/icons/minecraft-and.png', 'http://www.catgifpage.com/gifs/184.gif', '', 'http://www.invention-universe.com/val/', 'Schematic'),
+(6, 1, 'T-Flip-Flop', 2, 'Changes a pulse into a constant output.  Changes a button into a lever essentially.', '2013-07-18', 5, 1, 5, 0, 'module-images/icons/minecraft-t-flip-flop.png', 'http://www.catgifpage.com/gifs/179.gif', '', '', ''),
+(7, 1, 'NAND Gate', 1, 'When the two inputs are on the output is off.  Whatever other state the Gate is in the output is on.', '2013-07-18', 5, 1, 5, 0, 'module-images/icons/minecraft-nand.png', 'http://www.catgifpage.com/gifs/176.gif', '', '', ''),
+(8, 1, 'XOR Gate', 2, 'If one input is on, the output is on.  In any other state the output is off.', '2013-07-18', 5, 1, 5, 0, 'module-images/icons/minecraft-xor.png', 'http://24.media.tumblr.com/532e270364df9a8550381f0820cfcaf3/tumblr_mr0c6b3Wjl1s199fdo1_250.gif', '', '', ''),
+(9, 1, 'Basic motor mount', 1, 'Just a basic way to make a standing motor', '2013-08-12', 2, 5, 1, 0, 'module-images/icons/lego-motor-mount.jpg', 'module-images/icons/tooltip-icons/app-lego-motor-mount-overview.jpg', 'Click for instructions.', '', ''),
+(11, 1, 'Cardboard Bridge', 1, 'A bridge to support the weight of a truck! A toy one anyways...', '2013-08-16', 1, 5, 2, 0, 'module-images/icons/bridge-icon.png', 'module-images/icons/tooltip-icons/bridge.png', '', '', ''),
+(12, 1, 'Hard Heads', 1, 'Make some cool friends from junk', '2013-08-16', 3, 2, 2, 0, 'module-images/icons/hard-heads-icon.png', '', '', '', ''),
+(13, 1, 'Air Heads', 1, 'Make an awesome paper head', '2013-08-16', 3, 2, 2, 0, 'module-images/icons/air-heads-icon.png', '', '', '', ''),
+(14, NULL, 'Vertical Structure', 1, 'This stands something up', '2013-08-19', 1, 3, 2, 0, 'module-images/icons/vertical-structure.jpg', '', '', '', '');
 
 -- --------------------------------------------------------
 

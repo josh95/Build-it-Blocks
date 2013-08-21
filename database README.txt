@@ -35,6 +35,9 @@ name- name of the module
 difficulty- how hard the module is to build on a scale of 1 to 3
 Not currently implemented.
 
+description- some text used as the title text of the icons.
+displays when hovering over the module icon.
+
 date-posted- Currently used to display the most recently uploaded
 module
 
