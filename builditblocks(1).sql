@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 20, 2013 at 09:10 AM
--- Server version: 5.6.12-log
--- PHP Version: 5.4.16
+-- Generation Time: Aug 21, 2013 at 05:52 PM
+-- Server version: 5.5.24-log
+-- PHP Version: 5.3.13
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `builditblocks`
 --
-CREATE DATABASE IF NOT EXISTS `builditblocks` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `builditblocks`;
 
 -- --------------------------------------------------------
 
@@ -37,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `applications` (
   `link` varchar(200) DEFAULT NULL,
   `youtube-embedID` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `applications`
@@ -145,28 +143,6 @@ INSERT INTO `category_table` (`ID`, `subcategoryID`, `name`, `image-path`, `type
 -- --------------------------------------------------------
 
 --
--- Table structure for table `image`
---
-
-CREATE TABLE IF NOT EXISTS `image` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `moduleID` int(11) DEFAULT NULL,
-  `image-path` varchar(100) DEFAULT NULL,
-  `description` varchar(250) DEFAULT NULL,
-  `alt-text` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `image`
---
-
-INSERT INTO `image` (`ID`, `moduleID`, `image-path`, `description`, `alt-text`) VALUES
-(1, 1, 'module-images/clock-lego-1.jpg', 'It''s a clock gear train. Let''s learn how to build one!', 'clock');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `keywords`
 --
 
@@ -187,7 +163,6 @@ CREATE TABLE IF NOT EXISTS `module_index` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `partnerID` int(11) DEFAULT NULL,
   `name` varchar(25) DEFAULT NULL,
-  `description` varchar(400) DEFAULT NULL,
   `difficulty` int(11) DEFAULT NULL,
   `date-posted` date DEFAULT NULL,
   `type` int(11) DEFAULT NULL,
@@ -206,20 +181,20 @@ CREATE TABLE IF NOT EXISTS `module_index` (
 -- Dumping data for table `module_index`
 --
 
-INSERT INTO `module_index` (`ID`, `partnerID`, `name`, `description`, `difficulty`, `date-posted`, `type`, `subcategoryID`, `authorID`, `popularity`, `icon`, `icon-tooltip`, `icon-alt-text`, `download-link`, `download-type`) VALUES
-(1, 1, 'Clock Gear Train', 'It''s a clock gear train', 2, '2013-06-03', 2, 1, 1, 0, 'module-images/icons/lego-clock.jpg', 'http://1-ps.googleusercontent.com/h/www.catgifpage.com/gifs/186.gif.pagespeed.ce.Z_8F-7SNTG.gif', '', 'http://www.invention-universe.com/val/', 'Schematic'),
-(2, 1, 'NOT Gate', 'The NOT gate, otherwise known as an invertor, changes the output of the gate to the opposite of the input.  For instance, if the input is on, the output is off and vice versa.', 1, '2013-07-15', 5, 1, 5, 0, 'module-images/icons/minecraft-not.png', 'http://1-ps.googleusercontent.com/h/www.catgifpage.com/gifs/185.gif.pagespeed.ce.yvDfYyj82d.gif', '', 'http://www.invention-universe.com/val/', 'Schematic'),
-(3, 1, 'Junk Catapult', 'This is a catapult made entirely from junk.', 2, '2013-08-16', 1, 4, 2, 0, 'module-images/icons/junk-catapult-icon.png', 'module-images/icons/tooltip-icons/junk-catapult-overview.png', '', '', ''),
-(4, 1, 'Coin Spillway', NULL, 2, '2013-08-16', 1, 5, 2, 0, 'module-images/icons/coin-spillway-icon.png', '', '', '', ''),
-(5, 1, 'AND Gate', 'The AND gate changes the output of the gate to on when both inputs are on and off when one of the inputs is or when they are both off.', 1, '2013-07-18', 5, 1, 1, 0, 'module-images/icons/minecraft-and.png', 'http://www.catgifpage.com/gifs/184.gif', '', 'http://www.invention-universe.com/val/', 'Schematic'),
-(6, 1, 'T-Flip-Flop', 'Changes a pulse into a constant output.  Changes a button into a lever essentially.', 2, '2013-07-18', 5, 1, 5, 0, 'module-images/icons/minecraft-t-flip-flop.png', 'http://www.catgifpage.com/gifs/179.gif', '', '', ''),
-(7, 1, 'NAND Gate', 'When the two inputs are on the output is off.  Whatever other state the Gate is in the output is on.', 1, '2013-07-18', 5, 1, 5, 0, 'module-images/icons/minecraft-nand.png', 'http://www.catgifpage.com/gifs/176.gif', '', '', ''),
-(8, 1, 'XOR Gate', 'If one input is on, the output is on.  In any other state the output is off.', 2, '2013-07-18', 5, 1, 5, 0, 'module-images/icons/minecraft-xor.png', 'http://24.media.tumblr.com/532e270364df9a8550381f0820cfcaf3/tumblr_mr0c6b3Wjl1s199fdo1_250.gif', '', '', ''),
-(9, 1, 'Basic motor mount', NULL, 1, '2013-08-12', 2, 5, 1, 0, 'module-images/icons/lego-motor-mount.jpg', 'module-images/icons/tooltip-icons/app-lego-motor-mount-overview.jpg', 'Click for instructions.', '', ''),
-(11, 1, 'Cardboard Bridge', NULL, 1, '2013-08-16', 1, 5, 2, 0, 'module-images/icons/bridge-icon.png', 'module-images/icons/tooltip-icons/bridge.png', '', '', ''),
-(12, 1, 'Hard Heads', NULL, 1, '2013-08-16', 3, 2, 2, 0, 'module-images/icons/hard-heads-icon.png', '', '', '', ''),
-(13, 1, 'Air Heads', NULL, 1, '2013-08-16', 3, 2, 2, 0, 'module-images/icons/air-heads-icon.png', '', '', '', ''),
-(14, NULL, 'Vertical Structure', NULL, 1, '2013-08-19', 1, 3, 2, 0, 'module-images/icons/vertical-structure.jpg', '', '', '', '');
+INSERT INTO `module_index` (`ID`, `partnerID`, `name`, `difficulty`, `date-posted`, `type`, `subcategoryID`, `authorID`, `popularity`, `icon`, `icon-tooltip`, `icon-alt-text`, `download-link`, `download-type`) VALUES
+(1, 1, 'Clock Gear Train', 2, '2013-06-03', 2, 1, 1, 0, 'module-images/icons/lego-clock.jpg', 'http://1-ps.googleusercontent.com/h/www.catgifpage.com/gifs/186.gif.pagespeed.ce.Z_8F-7SNTG.gif', '', 'http://www.invention-universe.com/val/', 'Schematic'),
+(2, 1, 'NOT Gate', 1, '2013-07-15', 5, 1, 5, 0, 'module-images/icons/minecraft-not.png', 'http://1-ps.googleusercontent.com/h/www.catgifpage.com/gifs/185.gif.pagespeed.ce.yvDfYyj82d.gif', '', 'http://www.invention-universe.com/val/', 'Schematic'),
+(3, 1, 'Junk Catapult', 2, '2013-08-16', 1, 4, 2, 0, 'module-images/icons/junk-catapult-icon.png', 'module-images/icons/tooltip-icons/junk-catapult-overview.png', '', '', ''),
+(4, 1, 'Coin Spillway', 2, '2013-08-16', 1, 5, 2, 0, 'module-images/icons/coin-spillway-icon.png', '', '', '', ''),
+(5, 1, 'AND Gate', 1, '2013-07-18', 5, 1, 1, 0, 'module-images/icons/minecraft-and.png', 'http://www.catgifpage.com/gifs/184.gif', '', 'http://www.invention-universe.com/val/', 'Schematic'),
+(6, 1, 'T-Flip-Flop', 2, '2013-07-18', 5, 1, 5, 0, 'module-images/icons/minecraft-t-flip-flop.png', 'http://www.catgifpage.com/gifs/179.gif', '', '', ''),
+(7, 1, 'NAND Gate', 1, '2013-07-18', 5, 1, 5, 0, 'module-images/icons/minecraft-nand.png', 'http://www.catgifpage.com/gifs/176.gif', '', '', ''),
+(8, 1, 'XOR Gate', 2, '2013-07-18', 5, 1, 5, 0, 'module-images/icons/minecraft-xor.png', 'http://24.media.tumblr.com/532e270364df9a8550381f0820cfcaf3/tumblr_mr0c6b3Wjl1s199fdo1_250.gif', '', '', ''),
+(9, 1, 'Basic motor mount', 1, '2013-08-12', 2, 5, 1, 0, 'module-images/icons/lego-motor-mount.jpg', 'module-images/icons/tooltip-icons/app-lego-motor-mount-overview.jpg', 'Click for instructions.', '', ''),
+(11, 1, 'Cardboard Bridge', 1, '2013-08-16', 1, 5, 2, 0, 'module-images/icons/bridge-icon.png', 'module-images/icons/tooltip-icons/bridge.png', '', '', ''),
+(12, 1, 'Hard Heads', 1, '2013-08-16', 3, 2, 2, 0, 'module-images/icons/hard-heads-icon.png', '', '', '', ''),
+(13, 1, 'Air Heads', 1, '2013-08-16', 3, 2, 2, 0, 'module-images/icons/air-heads-icon.png', '', '', '', ''),
+(14, NULL, 'Vertical Structure', 1, '2013-08-19', 1, 3, 2, 0, 'module-images/icons/vertical-structure.jpg', '', '', '', '');
 
 -- --------------------------------------------------------
 
