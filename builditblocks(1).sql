@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 21, 2013 at 05:52 PM
+-- Generation Time: Aug 21, 2013 at 07:14 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -105,40 +105,39 @@ CREATE TABLE IF NOT EXISTS `category_table` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `subcategoryID` int(11) NOT NULL,
   `name` varchar(25) DEFAULT NULL,
-  `image-path` varchar(100) DEFAULT NULL,
   `typeID` int(11) DEFAULT NULL,
   `subcategory-description` varchar(500) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 --
 -- Dumping data for table `category_table`
 --
 
-INSERT INTO `category_table` (`ID`, `subcategoryID`, `name`, `image-path`, `typeID`, `subcategory-description`) VALUES
-(1, 1, 'Spin', NULL, 1, 'Things that spin'),
-(2, 2, 'Locomote', NULL, 1, 'Moving forwards and back'),
-(3, 3, 'Wiggle', NULL, 1, 'Wiggle, wiggle, wiggle, wiggle, wiggle, yeah.'),
-(4, 4, 'Throw', NULL, 1, 'Throwing Stuff'),
-(5, 5, 'Structure', NULL, 1, 'Yep. Structures.'),
-(6, 2, 'Models', NULL, 3, 'Make some fly puppet pals!'),
-(7, 2, 'Controls', NULL, 4, ''),
-(8, 1, 'Animation', NULL, 4, ''),
-(9, 4, 'Background', NULL, 4, ''),
-(10, 3, 'Variables', NULL, 4, ''),
-(11, 5, 'Detection', NULL, 4, ''),
-(13, 1, 'Logic Gates', NULL, 5, 'Learn all about OR gates!'),
-(14, 2, 'Mechanisms', NULL, 5, 'Learn all about Pistons and cool stuff!'),
-(15, 3, 'Automation', NULL, 5, 'Automate stuff.  The clue is in the title.'),
-(17, 4, 'Minigames', NULL, 5, 'Minigames IN MINECRAFT!!'),
-(18, 1, 'Graphics', NULL, 3, 'Multi-dimensional graphics'),
-(19, 3, 'Music', NULL, 3, 'Loops, tracks, etc.'),
-(20, 4, 'Writing', NULL, 3, 'Stories and poems'),
-(21, 1, 'Spin', NULL, 2, ''),
-(22, 2, 'Locomote', NULL, 2, 'This is for LEGO; typeID=2 stands for LEGO'),
-(23, 3, 'Wiggle', NULL, 2, 'typeID=2 stands for LEGO.'),
-(24, 4, 'Throw', NULL, 2, 'typeID=2 stands for LEGO :)'),
-(25, 5, 'Structure', NULL, 2, '');
+INSERT INTO `category_table` (`ID`, `subcategoryID`, `name`, `typeID`, `subcategory-description`) VALUES
+(1, 1, 'Spin', 1, 'Things that spin'),
+(2, 2, 'Locomote', 1, 'Moving forwards and back'),
+(3, 3, 'Wiggle', 1, 'Wiggle, wiggle, wiggle, wiggle, wiggle, yeah.'),
+(4, 4, 'Throw', 1, 'Throwing Stuff'),
+(5, 5, 'Structure', 1, 'Yep. Structures.'),
+(6, 2, 'Controls', 4, ''),
+(7, 1, 'Animation', 4, ''),
+(8, 4, 'Background', 4, ''),
+(9, 3, 'Variables', 4, ''),
+(10, 5, 'Detection', 4, ''),
+(11, 1, 'Logic Gates', 5, 'Learn all about OR gates!'),
+(12, 2, 'Mechanisms', 5, 'Learn all about Pistons and cool stuff!'),
+(13, 3, 'Automation', 5, 'Automate stuff.  The clue is in the title.'),
+(14, 4, 'Minigames', 5, 'Minigames IN MINECRAFT!!'),
+(15, 1, 'Graphics', 3, 'Multi-dimensional graphics'),
+(16, 2, 'Models', 3, 'Make some fly puppet pals!'),
+(17, 3, 'Music', 3, 'Loops, tracks, etc.'),
+(18, 4, 'Writing', 3, 'Stories and poems'),
+(19, 1, 'Spin', 2, ''),
+(20, 2, 'Locomote', 2, 'This is for LEGO; typeID=2 stands for LEGO'),
+(21, 3, 'Wiggle', 2, 'typeID=2 stands for LEGO.'),
+(22, 4, 'Throw', 2, 'typeID=2 stands for LEGO :)'),
+(23, 5, 'Structure', 2, '');
 
 -- --------------------------------------------------------
 
