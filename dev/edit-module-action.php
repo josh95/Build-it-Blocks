@@ -1,24 +1,34 @@
 <?php
 include("../db-connect.php");
 
-if ($_POST['difficulty'] != null){
+echo "module ID: " . $_POST['moduleid'] . "<br>"; //tell user module ID
+
+//update difficulty if a difficulty was inputted on previous page.
+if ($_POST['difficulty'] != null){ //checking if anything was written in difficulty field
 	$difficulty= $_POST['difficulty'];
 	echo "changed difficulty to " . $difficulty. "<br>";
-	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `difficulty` = ". $difficulty . " WHERE `module_index`.`ID` =1"); //1 should equal moduleID as given by previous page
+	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `difficulty` = ". $difficulty . " WHERE `module_index`.`ID` =" .$_POST['moduleid']); //moduleID as given by previous page
 }
 else
-echo "No change to difficulty <br>";
+	echo "No change to difficulty <br>";
 
 
 if ($_POST['modulename'] != null){
 	$name= $_POST['modulename'];
 	echo "changed Module's name to " . $name. "<br>";
-	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `name` = \"". $name . "\" WHERE `module_index`.`ID` =1"); //1 should equal moduleID as given by previous page
+	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `name` = \"". $name . "\" WHERE `module_index`.`ID` =" .$_POST['moduleid']); //moduleID as given by previous page
 }
 else
 echo "No change to Module Name <br>";
 
-echo "module ID: " . $_POST['moduleid'];
+if ($_POST['subcategoryID'] != 0){
+	$subcat= $_POST['subcategoryID'];
+	echo "changed subcategoryID to " . $subcat. "<br>";
+	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `subcategoryID` = \"". $subcat . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
+}
+else
+echo "No change to Subcategory ID <br>";
+
 
 $allowedExts = array("gif", "jpeg", "jpg", "png");
 $temp = explode(".", $_FILES["icon"]["name"]);

@@ -17,12 +17,15 @@ if($module["name"] == null){ //could not find the module based on the name the u
 //if program did not die, user must have typed the name correctly. Proceed. 
 
 echo  "You are editing the " . $module["name"];
+
+echo "<input type=\"hidden\" name=\"moduleid\" value=". $module['ID'] .">" //hidden types pass on a post variable to next page that user does not input
+												//in this case, we pass the moduleID which the developer might not know
 ?>
 <br>
 Fields to Change: <br>
 Module Name: <input type="text" name="modulename"><br>
-Difficulty: <input type="text" name="difficulty"><br>
-Subcategory: <br>
+Difficulty (1-easy, 2-medium, 3-hard): <input type="text" name="difficulty"><br>
+Subcategory: <br> <input type="hidden" name="subcategoryID" value="0"> <!--sets a default value for subcategoryID, otherwise we get error-->
 
 <?php
 	$modulename = $_GET['module-name']; //get the module name, as typed in by user on previous page.
@@ -36,7 +39,7 @@ Subcategory: <br>
 	include("../db-connect.php");
 	$temp = mysqli_query($con, "SELECT * from `category_table` WHERE `typeID`=" . $type);
 	while($cat=mysqli_fetch_array($temp)){
-		echo $cat['subcategoryID'] . $cat['name'] . "<input type='radio' name='subcategoryID' value=". $cat['subcategoryID'] .">";
+		echo $cat['subcategoryID'] . $cat['name'] . "<input type='radio' name='subcategoryID' value=". $cat['subcategoryID'] ."><br>";
 	}
 ?>
 <br>
@@ -57,8 +60,6 @@ Author: <br> <!--will use php to generate the list of authors as radio buttons--
 
 Download Type(optional unless previous field is filled): <input type="text" name="download-type"><br>
 
-<input type="hidden" name="moduleid" value="5 "> <!--hidden types pass on a post variable to next page that user does not input-->
-												<!--in this case, we pass the moduleID which the developer might not know-->
 
 <input type="submit"  value="Okay">
 
