@@ -1,11 +1,11 @@
 <html>
 <head></head>
-<body>
+
 <?php 
 $name = $_POST["name"];
 $difficulty = $_POST["difficulty"];
 $date = 0;
-$type = $_POST["type"];
+$type = $_POST["1"];
 $subcatid = 0;
 $authorID = $_POST["author"];
 $icon = $_POST["icon"];
@@ -15,7 +15,7 @@ $downloadtype = $_POST["dltype"];
 
 include("../db-connect.php");
 
-INSERT INTO  `builditblocks`.`module_index` (
+mysqli_query($con, "INSERT INTO  `builditblocks`.`module_index` (
 `ID` ,
 `name` ,
 `difficulty` ,
@@ -29,6 +29,8 @@ INSERT INTO  `builditblocks`.`module_index` (
 `download-type`
 )
 VALUES (
-NULL ,  $name,  $difficulty,  $date,  $type,  $subcatid,  $authorID,  $icon,  $icontooltip,  $downloadlink,  $downloadtype
+NULL ,  $name,  $difficulty,  '',  $type,  $subcatid,  $authorID,  $icon,  $icontooltip,  $downloadlink,  $downloadtype
 #'
+);"
 );
+?>
