@@ -35,16 +35,22 @@ Subcategory: <br> <input type="hidden" name="subcategoryID" value="0"> <!--sets 
 
 
 	$type = $module['type']; //need to get the selected type from the previous page to display correct subcategories
-
-	include("../db-connect.php");
 	$temp = mysqli_query($con, "SELECT * from `category_table` WHERE `typeID`=" . $type);
 	while($cat=mysqli_fetch_array($temp)){
 		echo $cat['subcategoryID'] . $cat['name'] . "<input type='radio' name='subcategoryID' value=". $cat['subcategoryID'] ."><br>";
 	}
 ?>
 <br>
-Author: <br> <!--will use php to generate the list of authors as radio buttons-->
+Author: <br> <!--use php to generate the list of authors as radio buttons-->
+<input type="hidden" name="authorID" value="0">
+<?php
+	include("../db-connect.php");
+	$temp = mysqli_query($con, "SELECT * FROM `author`");
 
+	while($authors=mysqli_fetch_array($temp)){
+		echo $authors['name'] . "<input type='radio' name='authorID' value=". $cat['authorID'] ."><br>";
+	}
+?>
 
 <label for="file">Icon <br> NOTE: Must be 150 x 150 pixels:</label>
 <input type="file" name="icon" >
@@ -59,6 +65,9 @@ Author: <br> <!--will use php to generate the list of authors as radio buttons--
 <br>
 
 Download Type(optional unless previous field is filled): <input type="text" name="download-type"><br>
+
+<input type="hidden" name="delete-download" value="0"> <!--default value-->
+<input type="checkbox" name="delete-download" value="1">Delete Download<br>
 
 
 <input type="submit"  value="Okay">

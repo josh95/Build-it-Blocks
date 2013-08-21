@@ -19,7 +19,7 @@ if ($_POST['modulename'] != null){
 	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `name` = \"". $name . "\" WHERE `module_index`.`ID` =" .$_POST['moduleid']); //moduleID as given by previous page
 }
 else
-echo "No change to Module Name <br>";
+	echo "No change to Module Name <br>";
 
 if ($_POST['subcategoryID'] != 0){
 	$subcat= $_POST['subcategoryID'];
@@ -27,7 +27,15 @@ if ($_POST['subcategoryID'] != 0){
 	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `subcategoryID` = \"". $subcat . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
 }
 else
-echo "No change to Subcategory ID <br>";
+	echo "No change to Subcategory ID <br>";
+
+if ($_POST['authorID'] != 0){
+	$author= $_POST['AuthorID'];
+	echo "changed AuthorID to " . $author. "<br>";
+	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `authorID` = \"". $author . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
+}
+else
+	echo "No change to Author ID <br>";
 
 
 $allowedExts = array("gif", "jpeg", "jpg", "png");
@@ -46,10 +54,59 @@ if ($_FILES["icon"]["size"] < 200000){ //if icon is larger than 195kb, then it i
 
 		move_uploaded_file($_FILES["icon"]["tmp_name"],
 		"upload/" . $_FILES["icon"]["name"]);
+		//update module-index with new file path to icon
+		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `icon` = \" module-images/icons/" . $_FILES["icon"]["name"] . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
 		echo "Stored in: " . "upload/" . $_FILES["icon"]["name"];//stored in folder upload, will change to proper folder later
     }
 }
 else{
   echo "Invalid icon. File size too big.";
 }
+
+if ($_FILES["tool-tip-icon"]["size"] == 0){ //if icon field was left blank
+		echo "No change to tool tip icon" . "<br>";
+    }
+	else{
+		//tell user some stats about their uploaded icon
+		echo "Upload: " . $_FILES["tool-tip-icon"]["name"] . "<br>"; 
+		echo "Type: " . $_FILES["tool-tip-icon"]["type"] . "<br>";
+		echo "Size: " . ($_FILES["tool-tip-icon"]["size"] / 1024) . " kB<br>";
+
+		move_uploaded_file($_FILES["tool-tip-icon"]["tmp_name"],
+		"upload/" . $_FILES["tool-tip-icon"]["name"]);
+		echo "Stored in: " . "upload/" . $_FILES["tool-tip-icon"]["name"];//stored in folder upload, will change to proper folder later
+		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `tool-tip-icon` = \" module-images/icons/tooltip-icons/" . $_FILES["icon"]["name"] . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
+    }
+
+	
+if ($_POST['download-type'] != null){
+	$downloadtype= $_POST['download-type'];
+	echo "changed download type to " . $downloadtype. "<br>";
+	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `download-type` = \"". $downloadtype . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
+}
+else
+	echo "No change to download type ID <br>";
+	
+if ($_FILES["download-file"]["size"] == 0){ //if download field was left blank
+	if ($_POST['delete-download']){ //check if user wants to delete the download entirely
+		echo "download file deleted. <br>";
+		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `download-link` = \"\" , `download-type`=\"\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
+	}
+	else{
+		echo "No change to download file" . "<br>";
+	}
+}
+	else{
+		//tell user some stats about their uploaded icon
+		echo "Upload: " . $_FILES["download-file"]["name"] . "<br>"; 
+		echo "Type: " . $_FILES["download-file"]["type"] . "<br>";
+		echo "Size: " . ($_FILES["download-file"]["size"] / 1024) . " kB<br>";
+
+		move_uploaded_file($_FILES["download-file"]["tmp_name"],
+		"upload/" . $_FILES["download-file"]["name"]);
+		echo "Stored in: " . "upload/" . $_FILES["download-file"]["name"];//stored in folder upload, will change to proper folder later
+		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `download-link` = \" module-resources/" . $_FILES["icon"]["name"] . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
+    }
+	
+
 ?> 
