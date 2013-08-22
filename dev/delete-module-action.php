@@ -12,7 +12,8 @@
 		mysqli_query($con, "DELETE FROM `builditblocks`.`applications` WHERE `applications`.`moduleID` = $idnumber");
 		mysqli_query($con, "DELETE FROM `builditblocks`.`steps` WHERE `steps`.`moduleID` = \"$idnumber\"");
 		mysqli_query($con, "DELETE FROM `builditblocks`.`module_index` WHERE `module_index`.`name` = \"$delete\"");
-		echo "The module " . $delete . " has been removed from the database.";
+		echo "The module " . $delete . " has been removed from the database";
+		
 		?>
 	<a href="dev-welcome.php">Return to Developers Page</a>
 </body>

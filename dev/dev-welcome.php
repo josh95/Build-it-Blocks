@@ -22,11 +22,11 @@
 					<p>Would you like to upload a new Module?
 					<p>What type of module do you want to upload?</p>
 					<form action="create-module-form.php" method="post">
-						<input type="radio" name="type" value=1 checked> Junk<br>
-						<input type="radio" name="type" value=2> Lego<br>
-						<input type="radio" name="type" value=3> Art<br/>
-						<input type="radio" name="type" value=4> Code<br/>
-						<input type="radio" name="type" value=5> Minecraft<br/><br/>	
+						<input type="radio" name="type1" value=1 checked> Junk<br>
+						<input type="radio" name="type1" value=2> Lego<br>
+						<input type="radio" name="type1" value=3> Art<br/>
+						<input type="radio" name="type1" value=4> Code<br/>
+						<input type="radio" name="type1" value=5> Minecraft<br/><br/>	
 						<input type="submit" value="Go!">
 					</form>
 				</td style="padding-left:40px">

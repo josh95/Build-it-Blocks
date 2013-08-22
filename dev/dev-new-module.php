@@ -67,7 +67,7 @@
 	Sub-category:<br/>
 	<?php
 		$i = 0;
-		$type = $_POST["type"];
+		$type = $_POST["type1"];
 		include("../db-connect.php");
 		$temp = mysqli_query($con, "SELECT * FROM `category_table` WHERE `typeID` = $type");
 		while ($type1 = mysqli_fetch_array($temp)) {
