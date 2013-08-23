@@ -84,8 +84,10 @@
 	Big icon (tooltip icon): <input type="file" name="bigicon" id="file"><br/><br/>
 	Download file (optional): <input type="file" name="dlfile" id="file"><br/><br/>
 	Download type: <input type="text" name="dltype"/><br/><br/>
+	<form action="create-application-form.php" method="post">
 	Number of applications (not including overview): <input type="number" name="noofapps" value="1"/><br/><br/>
 	Number of steps: <input type="number" name="noofsteps" value="1"/><br/>
+	</form>
 	<a href="create-module-form.php"><input type="submit" value="Continue to Overview/Applications"/><a/>
 	<a href="dev-welcome.php"><input type="submit" value="Cancel"/></a>
 	</form>
