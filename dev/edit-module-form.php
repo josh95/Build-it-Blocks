@@ -69,9 +69,27 @@ Download Type(optional unless previous field is filled): <input type="text" name
 <input type="hidden" name="delete-download" value="0"> <!--default value-->
 <input type="checkbox" name="delete-download" value="1">Delete Download<br>
 
-
 <input type="submit"  value="Okay">
 
 </form>
+
+<form action="edit-instructions-form.php" method="post"><!--edit instructions-->
+<?php
+$modulename = $_GET['module-name']; //get the module name, as typed in by user on previous page.
+include("../db-connect.php");
+$temp = mysqli_query($con, "SELECT * FROM `module_index` WHERE `name` = \"" . $modulename ."\"");
+$module = mysqli_fetch_array($temp);
+//pass on the moduleid to next page to use
+echo "<input type=\"hidden\" name=\"moduleid\" value=". $module['ID'] .">"
+?>
+<input type="submit"  value="Edit Instructions">
+
+</form>
+
+<form action="edit-applications-form.php" method="post"><!--edit applications/overview-->
+<input type="submit"  value="Edit Applications/Overview">
+</form>
+
+
 </body>
 </html>
