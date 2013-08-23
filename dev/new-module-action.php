@@ -2,6 +2,7 @@
 <head></head>
 <body>
 <?php
+//all of these variables store what the user typed in the text boxes at the previous oage
 $name = $_POST["name"];
 $name = mysql_real_escape_string($name);
 $description = $_POST["description"];
@@ -22,6 +23,8 @@ $downloadtype = $_POST["dltype"];
 $downloadtype = mysql_real_escape_string($downloadtype);
 include("../db-connect.php");
 $name = "nick0";
+//this query inserts all the variables into the database
+//Files should be $files not post
 mysqli_query($con, "INSERT INTO `builditblocks`.`module_index` (
 `ID`, 
 `partnerID`, 
@@ -44,6 +47,7 @@ NULL, NULL, '$name', 'nick1', '$difficulty', '0', '6', '7', '8', '9', 'blah.jpeg
 #'
 );"
 );
+//test values in case variables don't work below
 //NULL, NULL, 'nick', 'nick1', '5', '0', '6', '7', '8', '9', 'blah.jpeg', 'blahaha.jpeg', '', 'blah.php', 'blah');
 echo "Thank You for adding the module" . $name . "to the database!";
 ?>

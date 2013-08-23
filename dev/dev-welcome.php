@@ -5,6 +5,7 @@
 </head>
 <body>
     <?php
+			//checks if user inputs correct username and password and returns error if not
             $username = $_POST['user'];
             $password = $_POST['pass'];
             $con=mysqli_connect("localhost",$username,$password,"test");
@@ -13,6 +14,7 @@
 				die("incorrect username or password");
 			}	
     ?>
+		<!-- Asks if user wants to create, delete or edit a module-->
 		<p id="title">Welcome to the developers page, what would you like to do?</p>
 		<a id="logout" href="dev-page.php">Logout</a>
 		<table cellpadding="10">
@@ -21,6 +23,7 @@
 					<form name="input" action="dev-new-module.php" method="post">
 					<p>Would you like to upload a new Module?
 					<p>What type of module do you want to upload?</p>
+					<!-- All of the different module types displayed here as radio buttons-->
 					<form action="create-module-form.php" method="post">
 						<input type="radio" name="type1" value=1 checked> Junk<br>
 						<input type="radio" name="type1" value=2> Lego<br>
@@ -47,11 +50,13 @@
 	<br/>
 	<p>These are all the existing modules:
 	<?php
+	
 	echo "<table><tr>";
 	echo "<td><ul>";
 	include("../db-connect.php");
 	$temp = mysqli_query($con, "SELECT * FROM `module_index` WHERE `type` = 1");
 	$i = 0;
+	//puts all of the Junk module names in an array and echos them in an unordered list
 	while($module = mysqli_fetch_array($temp)) {
 	 "moduleArray[".$i."]=\"" . $module["name"]."\";" ;
 		$i++;
@@ -62,6 +67,7 @@
 	include("../db-connect.php");
 	$temp = mysqli_query($con, "SELECT * FROM `module_index` WHERE `type` = 2");
 	$i = 0;
+	//same as other loop except with lego modules
 	while($module = mysqli_fetch_array($temp)) {
 	 "moduleArray[".$i."]=\"" . $module["name"]."\";" ;
 		$i++;
@@ -72,6 +78,7 @@
 	include("../db-connect.php");
 	$temp = mysqli_query($con, "SELECT * FROM `module_index` WHERE `type` = 3");
 	$i = 0;
+	//same but with art modules
 	while($module = mysqli_fetch_array($temp)) {
 	 "moduleArray[".$i."]=\"" . $module["name"]."\";" ;
 		$i++;
@@ -82,6 +89,7 @@
 	include("../db-connect.php");
 	$temp = mysqli_query($con, "SELECT * FROM `module_index` WHERE `type` = 4");
 	$i = 0;
+	//Code modules
 	while($module = mysqli_fetch_array($temp)) {
 	 "moduleArray[".$i."]=\"" . $module["name"]."\";" ;
 		$i++;
@@ -92,6 +100,7 @@
 	include("../db-connect.php");
 	$temp = mysqli_query($con, "SELECT * FROM `module_index` WHERE `type` = 5");
 	$i = 0;
+	//Minecraft modules
 	while($module = mysqli_fetch_array($temp)) {
 	 "moduleArray[".$i."]=\"" . $module["name"]."\";" ;
 		$i++;
