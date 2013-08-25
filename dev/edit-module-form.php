@@ -48,7 +48,7 @@ Author: <br> <!--use php to generate the list of authors as radio buttons-->
 	$temp = mysqli_query($con, "SELECT * FROM `author`");
 
 	while($authors=mysqli_fetch_array($temp)){
-		echo $authors['name'] . "<input type='radio' name='authorID' value=". $cat['authorID'] ."><br>";
+		echo $authors['name'] . "<input type='radio' name='authorID' value=". $authors['authorID'] ."><br>";
 	}
 ?>
 
