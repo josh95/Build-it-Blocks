@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 21, 2013 at 07:25 PM
+-- Generation Time: Aug 26, 2013 at 11:01 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `applications` (
   `link` varchar(200) DEFAULT NULL,
   `youtube-embedID` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
 
 --
 -- Dumping data for table `applications`
@@ -70,7 +70,16 @@ INSERT INTO `applications` (`ID`, `moduleID`, `picture`, `description`, `title`,
 (26, 12, NULL, 'These advanced humanoids evolved from the piles of garbage left by a world full of uncivilized, nat-brained humans.', 'Hard Heads', NULL, NULL),
 (27, 12, NULL, 'Build-It-Yourself crew members are on a mission to morph premium quality junk into a new generation of super heroes.', NULL, NULL, NULL),
 (28, 14, 'module-images/applications-img/junk/vertical-structure.jpg', 'You can use the Vertical Structure as a base that you can mount things on.', 'Vertical Structure', NULL, NULL),
-(29, 14, 'module-images/applications-img/junk/vertical-structure-app.jpg', 'Here is and application of the Vertical Structure', 'Apply Vertical Structure', NULL, NULL);
+(29, 14, 'module-images/applications-img/junk/vertical-structure-app.jpg', 'Here is and application of the Vertical Structure', 'Apply Vertical Structure', NULL, NULL),
+(30, 22, 'module-images/applications-img/code/bib-code-html-title-pg-500.jpg', 'Set up your website with this template.', 'Tile Page Template', NULL, NULL),
+(31, 22, 'module-images/applications-img/code/bib-code-html-title-pg-500.jpg', 'Set up your website with this template.', 'Tile Page Template', NULL, NULL),
+(32, 15, 'module-images/applications-img/lego/one-shot-catapult.png', 'This catapult fires one shot after its pin has been pulled', 'One Shot Catapult', NULL, NULL),
+(33, 15, 'module-images/applications-img/lego/app-lego-motor-mount-catapult.jpg', 'This is showing a motor pulling the realease pin of the catapult.', 'Launch', NULL, NULL),
+(34, 16, 'module-images/applications-img/lego/fwd-rev-chassis.png', 'Use this chassis for a robot that moves forward without turning.', 'Forward Reverse Chassis', NULL, NULL),
+(35, 16, 'module-images/applications-img/lego/fwd-rev-chassis.png', 'A moving robot.', 'An Application', NULL, NULL),
+(36, 18, 'module-images/applications-img/art/cartoons-app-1.png', 'Some silly cartoon faces', 'Cartoon Faces', NULL, NULL),
+(37, 18, 'module-images/applications-img/art/cartoons-app-2.png', 'More silly cartoon faces', 'Cartoon Faces', NULL, NULL),
+(38, 18, 'module-images/applications-img/art/cartoons-app-3.png', 'Even more silly faces', 'Cartoon Faces', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -120,11 +129,11 @@ INSERT INTO `category_table` (`ID`, `subcategoryID`, `name`, `typeID`, `subcateg
 (3, 3, 'Wiggle', 1, 'Wiggle, wiggle, wiggle, wiggle, wiggle, yeah.'),
 (4, 4, 'Throw', 1, 'Throwing Stuff'),
 (5, 5, 'Structure', 1, 'Yep. Structures.'),
-(6, 2, 'Controls', 4, ''),
-(7, 1, 'Animation', 4, ''),
-(8, 4, 'Background', 4, ''),
-(9, 3, 'Variables', 4, ''),
-(10, 5, 'Detection', 4, ''),
+(6, 1, 'Scratch', 4, ''),
+(7, 2, 'HTML', 4, ''),
+(8, 3, 'Javascript', 4, ''),
+(9, 4, 'Mindstorm', 4, ''),
+(10, 5, '', 4, ''),
 (11, 1, 'Logic Gates', 5, 'Learn all about OR gates!'),
 (12, 2, 'Mechanisms', 5, 'Learn all about Pistons and cool stuff!'),
 (13, 3, 'Automation', 5, 'Automate stuff.  The clue is in the title.'),
@@ -175,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `module_index` (
   `download-link` varchar(250) NOT NULL,
   `download-type` varchar(100) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `module_index`
@@ -194,7 +203,16 @@ INSERT INTO `module_index` (`ID`, `partnerID`, `name`, `difficulty`, `descriptio
 (11, 1, 'Cardboard Bridge', 1, 'A bridge to support the weight of a truck! A toy one anyways...', '2013-08-16', 1, 5, 2, 0, 'module-images/icons/bridge-icon.png', 'module-images/icons/tooltip-icons/bridge.png', '', '', ''),
 (12, 1, 'Hard Heads', 1, 'Make some cool friends from junk', '2013-08-16', 3, 2, 2, 0, 'module-images/icons/hard-heads-icon.png', '', '', '', ''),
 (13, 1, 'Air Heads', 1, 'Make an awesome paper head', '2013-08-16', 3, 2, 2, 0, 'module-images/icons/air-heads-icon.png', '', '', '', ''),
-(14, NULL, 'Vertical Structure', 1, 'This stands something up', '2013-08-19', 1, 3, 2, 0, 'module-images/icons/vertical-structure.jpg', '', '', '', '');
+(14, NULL, 'Vertical Structure', 1, 'This stands something up', '2013-08-19', 1, 3, 2, 0, 'module-images/icons/vertical-structure.jpg', '', '', '', ''),
+(15, NULL, 'One Shot Catapult', 2, 'A catapult made from legos that shoots once.', '2013-08-26', 2, 4, 2, 0, 'module-images/icons/bib-lego-nxt-catapult-one-shot-icon.jpg', '', '', '', ''),
+(16, NULL, 'Forward/Reverse Chassis', 2, 'A chassis for a lego vehicle that can move forward and back', '2013-08-26', 2, 2, 2, 0, 'module-images/icons/bib-lego-nxt-chassis-fwd-rev-icon.jpg', '', '', '', ''),
+(17, NULL, 'Up Down Swing', 1, 'This moves a bar up and down', '2013-08-26', 2, 3, 2, 0, 'module-images/icons/bib-lego-nxt-up-dwn-swing-icon.jpg', '', '', '', ''),
+(18, NULL, 'Cartooning', 1, 'Use powerpoint to make some funky faces', '2013-08-26', 3, 1, 2, 0, 'module-images/icons/bib-art-cartoon-icon.jpg', '', '', '', ''),
+(19, NULL, 'Animation', 3, 'Make some cool animated gifs', '2013-08-26', 3, 1, 2, 0, 'module-images/icons/bib-art-anim-icon.gif', '', '', '', ''),
+(20, NULL, 'Graffiti', 1, 'Awesome graffiti to get your message out!', '2013-08-26', 3, 1, 2, 0, 'module-images/icons/bib-art-graffiti-icon.jpg', '', '', '', ''),
+(21, NULL, 'Scratch Rocket Control', 1, 'Control a Scratch Rocket with the arrow keys', '2013-08-26', 4, 1, 2, 0, 'module-images/icons/bib-code-scratch-rkt-ctrl-arrow-icon.gif', '', '', '', ''),
+(22, NULL, 'Home Page Template', 1, 'A template for a home page of your website', '2013-08-26', 4, 2, 2, 0, 'module-images/icons/bib-code-html-title-icon.jpg', '', '', 'module-resources/home-page.htm', 'HTML Template'),
+(23, NULL, 'Scratch Coins', 2, 'Make some coins?', '2013-08-26', 4, 1, 2, 0, 'module-images/icons/bib-code-scratch-coins-icon.jpg', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -245,7 +263,7 @@ CREATE TABLE IF NOT EXISTS `steps` (
   `rcxcode-robolab` varchar(100) DEFAULT NULL,
   `rcxcode-mindstorms` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=62 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=85 ;
 
 --
 -- Dumping data for table `steps`
@@ -308,7 +326,30 @@ INSERT INTO `steps` (`ID`, `moduleID`, `step-number`, `image-path`, `step-descri
 (58, 14, 2, 'module-images/instruction-img/junk/vertical-structure1.png', 'Cut cardboard 3" by 5" and tape(hot glue) 7" coffee stirrer sticks to cardboard to stiffen.', NULL, NULL, NULL),
 (59, 14, 2, 'module-images/instruction-img/junk/vertical-structure2.png', 'Mark and score on the black lines. Then cut the base sections.', NULL, NULL, NULL),
 (60, 14, 3, 'module-images/instruction-img/junk/vertical-structure3.png', 'Bend along the score lines and tape the triangular vertical structure to the base (triangles are the srtongest shape). Then cut 3" off of a straw and put tape on both sides.', NULL, NULL, NULL),
-(61, 14, 4, 'module-images/instruction-img/junk/vertical-structure4.png', 'Tape/hot glue the straw to one side of the triangle. Then tape the arm to a different side in case you want to decorate it with pipe cleaners or other decorations.', NULL, NULL, NULL);
+(61, 14, 4, 'module-images/instruction-img/junk/vertical-structure4.png', 'Tape/hot glue the straw to one side of the triangle. Then tape the arm to a different side in case you want to decorate it with pipe cleaners or other decorations.', NULL, NULL, NULL),
+(62, 22, 1, 'module-images/instruction-img/code/bib-code-html-title-pg-500.jpg', 'Download the template from the link.', NULL, NULL, NULL),
+(63, 22, 2, 'module-images/instruction-img/code/bib-code-html-title-pg-500.jpg', 'Open the file in a text editor and edit the code to fit your needs.', NULL, NULL, NULL),
+(64, 15, 1, 'module-images/instruction-img/lego/one-shot-catapult-1.png', 'Assemble these parts', NULL, NULL, NULL),
+(65, 15, 2, 'module-images/instruction-img/lego/one-shot-catapult-2.png', 'Follow the image', NULL, NULL, NULL),
+(66, 15, 3, 'module-images/instruction-img/lego/one-shot-catapult-3.png', 'Now assemble these parts', NULL, NULL, NULL),
+(67, 15, 4, 'module-images/instruction-img/lego/one-shot-catapult-4.png', 'Put the parts together', NULL, NULL, NULL),
+(68, 15, 5, 'module-images/instruction-img/lego/one-shot-catapult-5.png', 'Assemble more parts', NULL, NULL, NULL),
+(69, 15, 6, 'module-images/instruction-img/lego/one-shot-catapult-6.png', 'Make the catapult arm.', NULL, NULL, NULL),
+(70, 15, 7, 'module-images/instruction-img/lego/one-shot-catapult-7.png', 'Put the arm on the catapult structure to finish', NULL, NULL, NULL),
+(71, 16, 1, 'module-images/instruction-img/lego/fwd-rev-chassis-1.png', 'Get these parts', NULL, NULL, NULL),
+(72, 16, 2, 'module-images/instruction-img/lego/fwd-rev-chassis-2.png', 'Make this according to image', NULL, NULL, NULL),
+(73, 16, 3, 'module-images/instruction-img/lego/fwd-rev-chassis-3.png', 'Make this other part', NULL, NULL, NULL),
+(74, 16, 4, 'module-images/instruction-img/lego/fwd-rev-chassis-4.png', 'Now, put these pieces together', NULL, NULL, NULL),
+(75, 16, 5, 'module-images/instruction-img/lego/fwd-rev-chassis-5.png', 'Put this piece there', NULL, NULL, NULL),
+(76, 16, 6, 'module-images/instruction-img/lego/fwd-rev-chassis-6.png', 'Follow the image', NULL, NULL, NULL),
+(77, 16, 7, 'module-images/instruction-img/lego/fwd-rev-chassis-7.png', 'Almost done', NULL, NULL, NULL),
+(78, 16, 8, 'module-images/instruction-img/lego/fwd-rev-chassis-8.png', 'Done!', NULL, NULL, NULL),
+(79, 18, 1, 'module-images/instruction-img/art/cartoons-1.png', 'Exaggerate your eyes!  They tell the soul of your character.', NULL, NULL, NULL),
+(80, 18, 2, 'module-images/instruction-img/art/cartoons-2.png', 'Think about layering your shapes in front or behind other shapes.', NULL, NULL, NULL),
+(81, 18, 3, 'module-images/instruction-img/art/cartoons-3.png', 'Create interesting, unusual 3-D structures by laying basic shapes on top of each other.', NULL, NULL, NULL),
+(82, 18, 4, 'module-images/instruction-img/art/cartoons-4.png', 'Your cartoon will look more life-like if you use 2 colors.', NULL, NULL, NULL),
+(83, 18, 5, 'module-images/instruction-img/art/cartoons-5.png', 'This rather complex nose shape is just 3 ovals on top of each other.', NULL, NULL, NULL),
+(84, 18, 6, 'module-images/instruction-img/art/cartoons-6.png', 'This could be a guy or a gal depending on the hair you add.', NULL, NULL, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
