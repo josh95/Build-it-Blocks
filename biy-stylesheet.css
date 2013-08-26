@@ -122,7 +122,9 @@ a:hover
 	margin-right:auto;
 }
 
-.center-smaller {
+
+
+.table-icon{
 	align:center;
 	text-align:center;
 	font-size: 14pt;
@@ -130,6 +132,9 @@ a:hover
 	margin-left:auto;
 	margin-right:auto;
 	border:none;
+	vertical-align:top;
+	width:300px;
+	height:150px;
 }
 
 .menu-button{
@@ -147,14 +152,12 @@ a:hover
 }
 
 .menu-button-blocks{
-	padding-top:10px;
 	background-color: #FFFFFF;
 	color: #FF0000;
 	width: 111px;
 	height: 25px;
 	font-family:"verdana", verdana, sans-serif;
 	font-size:9pt;
-	padding-left:0px;
 	text-align: right;
 	margin-right:20px;
 }
@@ -199,10 +202,6 @@ a:hover
 	height:200px;
 }
 
-.center-smaller{
-	width:300px;
-	height:150px;
-}
 
 .img_wrapper{
 	width:400px;
@@ -435,6 +434,7 @@ a:hover
 	background-color:#404040;
 	margin-left:auto;
 	margin-right:auto;
+	margin-bottom:10px;
 	clear:both;
 	font-size:1px; /*need to do this for IE*/
 }
