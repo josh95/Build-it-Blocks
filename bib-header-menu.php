@@ -10,8 +10,8 @@
 			<!-- inside of the reference we put a div that contains the button. Unless clicked, it is on button-up.png by default, and goes to button-down.png when we hover over it. -->
 			<!-- If clicked, it stays on button-down.png at all times.  -->
 				<div id="home" class="menu-button-blocks">
-					<img src="images/build-it-blocks-home-button.png">
-					<!--Blocks I really really like it with one word only; we could always make it back to 'Blocks Home' :)-->
+					<img src="images/build-it-blocks-home-button.png" style="border:none;"> <!--border:none needed for IE-->
+					<!--I really really like it with one word only; we could always make it back to 'Blocks Home' :)-->
 				</div>
 			</a>
 		</li>
