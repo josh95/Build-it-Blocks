@@ -42,10 +42,10 @@
 					echo "Size: " . ($_FILES["imageoverview"]["size"] / 1024) . " kB<br>";
 
 					move_uploaded_file($_FILES["imageoverview"]["tmp_name"],
-					"upload/" . $_FILES["imageoverview"]["name"]);
+					"../module-images/applications-img/". $typename ."/" . $_FILES["imageoverview"]["name"]);
 					//update apps with new file path to image
 					mysqli_query($con, "UPDATE `builditblocks`.`applications` SET `picture` = \"module-images/applications-img/". $typename ."/" . $_FILES["imageoverview"]["name"] . "\" WHERE `ID` =".$_POST['overviewid']);
-					echo "Stored in: " . "upload/" . $_FILES["imageoverview"]["name"];//stored in folder upload, will change to proper folder later
+					echo "Stored in: " . "module-images/applications-img/". $typename ."/" . $_FILES["imageoverview"]["name"];//stored in folder upload, will change to proper folder later
 					echo "<br>";
 				}
 			}
@@ -84,10 +84,10 @@
 					echo "Size: " . ($_FILES["imageapp" .$i]["size"] / 1024) . " kB<br>";
 
 					move_uploaded_file($_FILES["imageapp".$i]["tmp_name"],
-					"upload/" . $_FILES["imageapp".$i]["name"]);
+					"../module-images/applications-img/". $typename ."/" . $_FILES["imageapp".$i]["name"]);
 					//update apps with new file path to image
 					mysqli_query($con, "UPDATE `builditblocks`.`applications` SET `picture` = \"module-images/applications-img/". $typename ."/" . $_FILES["imageapp".$i]["name"] . "\" WHERE `ID` =".$_POST['appid'. $i]);
-					echo "Stored in: " . "upload/" . $_FILES["imageapp".$i]["name"];//stored in folder upload, will change to proper folder later
+					echo "Stored in: " . "module-images/applications-img/". $typename ."/" . $_FILES["imageapp".$i]["name"];//stored in folder upload, will change to proper folder later
 					echo "<br>";
 				}
 			}

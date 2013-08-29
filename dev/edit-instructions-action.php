@@ -36,10 +36,10 @@
 					echo "Size: " . ($_FILES["imagestep" .$i]["size"] / 1024) . " kB<br>";
 
 					move_uploaded_file($_FILES["imagestep".$i]["tmp_name"],
-					"upload/" . $_FILES["imagestep".$i]["name"]);
+					"../module-images/instruction-img/". $typename ."/" . $_FILES["imagestep".$i]["name"]);
 					//update steps with new file path to image
 					mysqli_query($con, "UPDATE `builditblocks`.`steps` SET `image-path` = \"module-images/instruction-img/". $typename ."/" . $_FILES["imagestep".$i]["name"] . "\" WHERE `moduleID` =".$moduleid. " AND `step-number`=".$i);
-					echo "Stored in: " . "upload/" . $_FILES["imagestep".$i]["name"];//stored in folder upload, will change to proper folder later
+					echo "Stored in: " . "module-images/instruction-img/". $typename ."/" . $_FILES["imagestep".$i]["name"];//stored in instructions-img folder
 					echo "<br>";
 				}
 			}
@@ -47,5 +47,14 @@
 			  echo "Invalid icon. File size too big.";
 			}
 		}
-
 ?>
+
+<html>
+	<body>
+		<br>
+		Module has been updated.
+		<form action="dev-welcome.php" method="post">
+			<input type="submit" value="Go to Dev Home">
+		</form>
+	</body>
+</html>

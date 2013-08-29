@@ -66,12 +66,16 @@ Author: <br> <!--use php to generate the list of authors as radio buttons-->
 
 Download Type(optional unless previous field is filled): <input type="text" name="download-type"><br>
 
+<!--If this is checked, download file is deleted-->
 <input type="hidden" name="delete-download" value="0"> <!--default value-->
 <input type="checkbox" name="delete-download" value="1">Delete Download<br>
 
 <input type="submit"  value="Okay">
 
 </form>
+
+<!--These separate forms are used for the user to edit instructions, edit applications/overview, add applications, or add instructions
+there is one form for each of those options-->
 
 <form action="edit-instructions-form.php" method="post"><!--edit instructions-->
 	<?php
@@ -96,6 +100,32 @@ Download Type(optional unless previous field is filled): <input type="text" name
 		echo "<input type=\"hidden\" name=\"moduleid\" value=". $module['ID'] .">"
 	?>
 	<input type="submit"  value="Edit Applications/Overview">
+</form>
+
+<form action="new-instructions-form.php" method="post"><!--add instructions-->
+	<?php
+		$modulename = $_POST['module-name']; //get the module name, as typed in by user on previous page.
+		include("../db-connect.php");
+		$temp = mysqli_query($con, "SELECT * FROM `module_index` WHERE `name` = \"" . $modulename ."\"");
+		$module = mysqli_fetch_array($temp);
+		//pass on the moduleid to next page to use
+		echo "<input type=\"hidden\" name=\"moduleid\" value=". $module['ID'] .">"
+	?>
+	<input type="submit"  value="Add Instructions">
+	Add <input type="text" name="noofsteps" value="1"> new steps.
+</form>
+
+<form action="new-applications-form.php" method="post"><!--add applications-->
+	<?php
+		$modulename = $_POST['module-name']; //get the module name, as typed in by user on previous page.
+		include("../db-connect.php");
+		$temp = mysqli_query($con, "SELECT * FROM `module_index` WHERE `name` = \"" . $modulename ."\"");
+		$module = mysqli_fetch_array($temp);
+		//pass on the moduleid to next page to use
+		echo "<input type=\"hidden\" name=\"moduleid\" value=". $module['ID'] .">"
+	?>
+	<input type="submit"  value="Add Applications">
+	Add <input type="text" name="noofapps" value="1"> new applications.
 </form>
 
 

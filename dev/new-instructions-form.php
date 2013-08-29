@@ -14,7 +14,7 @@
 		//for loop takes the amount of steps the user said they would have in previous page and echos out the places they can add the values
 		for ($x=1; $x<=$noofsteps; $x++) {
 		echo "Step " . $x . " image: <input type='file' name='stepimg" . $x . "'>  
-		Text: <input type='text' name='steptext" . $x . "'> ";
+		Text: <input type='text' name='steptext" . $x . "'> <br>";
 		}
 		//pass on the number of steps and module id
 		echo "<input type=\"hidden\" name=\"moduleid\" value=\"". $moduleid ."\">";

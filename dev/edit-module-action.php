@@ -30,7 +30,7 @@ else
 	echo "No change to Subcategory ID <br>";
 
 if ($_POST['authorID'] != 0){
-	$author= $_POST['AuthorID'];
+	$author= $_POST['authorID'];
 	echo "changed AuthorID to " . $author. "<br>";
 	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `authorID` = \"". $author . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
 }
@@ -53,10 +53,10 @@ if ($_FILES["icon"]["size"] < 200000){ //if icon is larger than 195kb, then it i
 		echo "Size: " . ($_FILES["icon"]["size"] / 1024) . " kB<br>";
 
 		move_uploaded_file($_FILES["icon"]["tmp_name"],
-		"upload/" . $_FILES["icon"]["name"]);
+		"../module-images/icons/" . $_FILES["icon"]["name"]);
 		//update module-index with new file path to icon
 		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `icon` = \" module-images/icons/" . $_FILES["icon"]["name"] . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
-		echo "Stored in: " . "upload/" . $_FILES["icon"]["name"];//stored in folder upload, will change to proper folder later
+		echo "Stored in: " . "../module-images/icons/" . $_FILES["icon"]["name"];//stored icons folder
     }
 }
 else{
@@ -73,19 +73,19 @@ if ($_FILES["tool-tip-icon"]["size"] == 0){ //if icon field was left blank
 		echo "Size: " . ($_FILES["tool-tip-icon"]["size"] / 1024) . " kB<br>";
 
 		move_uploaded_file($_FILES["tool-tip-icon"]["tmp_name"],
-		"upload/" . $_FILES["tool-tip-icon"]["name"]);
-		echo "Stored in: " . "upload/" . $_FILES["tool-tip-icon"]["name"];//stored in folder upload, will change to proper folder later
-		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `tool-tip-icon` = \" module-images/icons/tooltip-icons/" . $_FILES["icon"]["name"] . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
+		"../module-images/icons/tooltip-icons/" . $_FILES["tool-tip-icon"]["name"]);
+		echo "Stored in: " . "../module-images/icons/tooltip-icons/" . $_FILES["tool-tip-icon"]["name"];//stored in icons/tooltip-icons
+		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `icon-tooltip` = \" module-images/icons/tooltip-icons/" . $_FILES["tool-tip-icon"]["name"] . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
     }
 
 	
 if ($_POST['download-type'] != null){
 	$downloadtype= $_POST['download-type'];
-	echo "changed download type to " . $downloadtype. "<br>";
+	echo "<br>changed download type to " . $downloadtype. "<br>";
 	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `download-type` = \"". $downloadtype . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
 }
 else
-	echo "No change to download type ID <br>";
+	echo "<br>No change to download type <br>";
 	
 if ($_FILES["download-file"]["size"] == 0){ //if download field was left blank
 	if ($_POST['delete-download']){ //check if user wants to delete the download entirely
@@ -96,17 +96,27 @@ if ($_FILES["download-file"]["size"] == 0){ //if download field was left blank
 		echo "No change to download file" . "<br>";
 	}
 }
-	else{
+	else{ //the download file field was not left blank
 		//tell user some stats about their uploaded icon
 		echo "Upload: " . $_FILES["download-file"]["name"] . "<br>"; 
 		echo "Type: " . $_FILES["download-file"]["type"] . "<br>";
 		echo "Size: " . ($_FILES["download-file"]["size"] / 1024) . " kB<br>";
 
 		move_uploaded_file($_FILES["download-file"]["tmp_name"],
-		"upload/" . $_FILES["download-file"]["name"]);
-		echo "Stored in: " . "upload/" . $_FILES["download-file"]["name"];//stored in folder upload, will change to proper folder later
-		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `download-link` = \" module-resources/" . $_FILES["icon"]["name"] . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
+		"../module-resources/" . $_FILES["download-file"]["name"]);
+		echo "Stored in: " . "../module-resources/" . $_FILES["download-file"]["name"];//stored in folder upload, will change to proper folder later
+		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `download-link` = \" module-resources/" . $_FILES["download-file"]["name"] . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
     }
 	
 
 ?> 
+
+<html>
+	<body>
+		<br>
+		Module has been updated.
+		<form action="dev-welcome.php" method="post">
+			<input type="submit" value="Go to Dev Home">
+		</form>
+	</body>
+</html>
