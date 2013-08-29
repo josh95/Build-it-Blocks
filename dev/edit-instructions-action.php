@@ -17,7 +17,7 @@
 			$i++;
 			if ($_POST['textstep'.$i] != null){
 				$step= $_POST['textstep'.$i];
-				echo "changed Step 1 to " . $step. "<br>";
+				echo "changed Step $i to " . $step. "<br>";
 				mysqli_query($con, "UPDATE `builditblocks`.`steps` SET `step-description` = \"". $step . "\" WHERE `moduleID` =".$moduleid. " AND `step-number`=".$i); //moduleID as given by previous page
 			}
 			else
@@ -39,7 +39,7 @@
 					"upload/" . $_FILES["imagestep".$i]["name"]);
 					//update steps with new file path to image
 					mysqli_query($con, "UPDATE `builditblocks`.`steps` SET `image-path` = \"module-images/instruction-img/". $typename ."/" . $_FILES["imagestep".$i]["name"] . "\" WHERE `moduleID` =".$moduleid. " AND `step-number`=".$i);
-					echo "Stored in: " . "upload/" . $_FILES["imagestep1"]["name"];//stored in folder upload, will change to proper folder later
+					echo "Stored in: " . "upload/" . $_FILES["imagestep".$i]["name"];//stored in folder upload, will change to proper folder later
 					echo "<br>";
 				}
 			}

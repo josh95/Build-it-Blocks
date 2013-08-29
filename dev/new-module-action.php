@@ -4,7 +4,6 @@
 <?php
 //all of these variables store what the user typed in the text boxes at the previous oage
 $name = $_POST["name"];
-//$name = mysql_real_escape_string($name);
 $description = $_POST["description"];
 $difficulty = $_POST["difficulty"];
 $date = 0;
@@ -17,7 +16,9 @@ $icontooltippath = "module-images/icons/tooltip-icons/". $_FILES["bigicon"]["nam
 $iconalttext = "";
 
 if ($_FILES["dlfile"]["size"] == 0){ //if download file field was left blank
-	echo "No download file";
+	echo "No download file. <br>";
+	$downloadlink = "";
+	$downloadtype = "";
 }
 else{
 	echo "Upload: " . $_FILES["dlfile"]["name"] . "<br>"; 
@@ -71,6 +72,5 @@ echo "</form>";
 ?>
 
 
-<a href="dev-welcome.php">Return to Developers Page</a>
 </body>
 </html>

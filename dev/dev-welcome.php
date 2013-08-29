@@ -35,14 +35,18 @@
 				</td style="padding-left:40px">
 				<td>
 					<form name="input" action="delete-module-form.php" method="post">
-					Do you want to delete a module?
-					<p>(make you sure you type correct)</p>
-					<input type="text" name="delete" value="Module name">
+						Do you want to delete a module?
+						<p>(make you sure you type correct)</p>
+						<input type="text" name="delete" value="Module name">
+						<input type="submit" value="Go!">
 					</form>
 				</td>
 				<td style="padding-left:40px">
-					Or do you want to edit a module?<br/>
-					<input type="text" name="edit-module" value="Module name"/>
+					<form action="edit-module-form.php" method="post">
+						Or do you want to edit a module?<br/>
+						<input type="text" name="module-name" value="Module name"/>
+						<input type="submit" value="Go!">
+					</form>
 					
 				</td>
 			</tr>

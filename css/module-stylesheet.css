@@ -18,12 +18,12 @@
 
 .slidesjs-next {
 	margin-right: 5px;
-	float: left;
+	float: right;
 	color: #00ff00
 }
 
 .slidesjs-pagination {
-	margin: 6px 6px 0;
+	margin: 10px 10px 0;
 	float: right;
 	list-style: none;
 }

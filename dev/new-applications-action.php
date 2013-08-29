@@ -16,7 +16,7 @@
 	$typename= $typearray[$typeid['type']];
 	
 	
-
+	//this part is for inserting the overview
 	$overviewtext = $_POST["overviewtext"];
 	$overviewtitle = $_POST["overviewtitle"];
 	
@@ -43,5 +43,19 @@
 		echo "application " . $x . " uploaded.<br>";
 	}
 
-
 ?>
+
+<html>
+<body>
+	Now go on to adding the steps.<br>
+	<form method="post" action="new-instructions-form.php">
+		<input type="submit" value="Go">
+		<?php
+			$moduleid= $_POST["moduleid"];
+			$noofsteps = $_POST["noofsteps"];
+			echo "<input type=\"hidden\" name=\"moduleid\" value=\"". $moduleid ."\">";
+			echo "<input type=\"hidden\" name=\"noofsteps\" value=\"". $noofsteps ."\">";
+		?>
+	</form>
+</body>
+</html>

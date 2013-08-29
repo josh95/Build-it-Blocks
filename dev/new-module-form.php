@@ -100,8 +100,11 @@
 	Number of applications (not including overview): <input type="number" name="noofapps" value="1"/><br/><br/>
 	Number of steps: <input type="number" name="noofsteps" value="1"/><br/>
 	<input type="submit" value="Continue to Overview/Applications"/>
-	<a href="dev-welcome.php"><input type="submit" value="Cancel"/></a>
 	</form>
-
+	
+	<!--This is a cancel button-->
+	<form action="dev-welcome.php" method="post">
+	<input type="submit" value="Cancel"/>
+	</form>
 </body>
 </html>
