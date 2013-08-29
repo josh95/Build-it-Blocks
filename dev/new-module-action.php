@@ -1,3 +1,11 @@
+<?php
+	//this script checks if the user got to the page correctly, ie by logging in and clicking on a link from another page.
+	//otherwise the page dies and the user will not be able to access the database. Security stuff.
+	if(!isset($_POST['loggedin'])){
+		die("You got to this page directly without logging in. Or you refreshed the page... Please go log in (again).");
+	}
+?> 
+
 <html>
 <head></head>
 <body>
@@ -81,9 +89,10 @@ echo "<input type=\"hidden\" name=\"moduleid\" value=\"" .$id['ID']. "\">";
 echo "<input type=\"hidden\" name=\"noofapps\" value=\"" .$_POST['noofapps']. "\">";
 echo "<input type=\"hidden\" name=\"noofsteps\" value=\"" .$_POST['noofsteps']. "\">";
 echo "<input type=\"submit\" value=\"Continue\">";
-echo "</form>";
 
 ?>
+<input type="hidden" name="loggedin" value="1"> 
+</form>
 
 
 </body>

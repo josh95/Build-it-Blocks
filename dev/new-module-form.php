@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+
+<?php
+	//this script checks if the user got to the page correctly, ie by logging in and clicking on a link from another page.
+	//otherwise the page dies and the user will not be able to access the database. Security stuff.
+	if(!isset($_POST['loggedin'])){
+		die("You got to this page directly without logging in. Or you refreshed the page... Please go log in (again).");
+	}
+?>
+
 <html>
 <head>
 	<link rel="stylesheet" type="text/CSS" href="dev-style.css"/>
@@ -7,6 +16,7 @@
 	<p id="title">Create a New Module</p>
 	<br/>
 	<form name="input" method="post" action="new-module-action.php" enctype="multipart/form-data">
+	<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 	Module Name:<input type="text" name="name"/><br/><br/>
 	Description: <input type="text" name="description" style="height:50px"><br/><br/>
 	Difficulty:<input type="text" name="difficulty"/><br/><br/>
@@ -104,7 +114,8 @@
 	
 	<!--This is a cancel button-->
 	<form action="dev-welcome.php" method="post">
-	<input type="submit" value="Cancel"/>
+		<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
+		<input type="submit" value="Cancel"/>
 	</form>
 </body>
 </html>

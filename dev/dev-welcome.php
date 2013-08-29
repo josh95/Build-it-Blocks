@@ -1,30 +1,30 @@
 <!DOCTYPE html>
+
+<?php
+	//this script checks if the user got to the page correctly, ie by logging in and clicking on a link from another page.
+	//otherwise the page dies and the user will not be able to access the database. Security stuff.
+	if(!isset($_POST['loggedin'])){
+		die("You got to this page directly without logging in. Or you refreshed the page... Please go log in (again).");
+	}
+?>
 <html>
 <head>
 	<link rel="stylesheet" type="text/CSS" href="dev-style.css"/>
 </head>
 <body>
-    <?php
-			//checks if user inputs correct username and password and returns error if not
-            $username = $_POST['user'];
-            $password = $_POST['pass'];
-            $con=mysqli_connect("localhost",$username,$password,"test");
-			if (mysqli_connect_errno($con))
-			{
-				die("incorrect username or password");
-			}	
-    ?>
+
 		<!-- Asks if user wants to create, delete or edit a module-->
 		<p id="title">Welcome to the developers page, what would you like to do?</p>
 		<a id="logout" href="dev-page.php">Logout</a>
 		<table cellpadding="10">
 			<tr>
 				<td style="padding-left:40px">
-					<form name="input" action="new-module-form.php" method="post">
-					<p>Would you like to upload a new Module?
-					<p>What type of module do you want to upload?</p>
-					<!-- All of the different module types displayed here as radio buttons-->
-					<form action="create-module-form.php" method="post">
+					<form action="new-module-form.php" method="post">
+						<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
+						<p>Would you like to upload a new Module?
+						<p>What type of module do you want to upload?</p>
+						
+						<!-- All of the different module types displayed here as radio buttons-->
 						<input type="radio" name="type1" value=1 checked> Junk<br>
 						<input type="radio" name="type1" value=2> Lego<br>
 						<input type="radio" name="type1" value=3> Art<br/>
@@ -35,6 +35,7 @@
 				</td style="padding-left:40px">
 				<td>
 					<form name="input" action="delete-module-form.php" method="post">
+						<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 						Do you want to delete a module?
 						<p>(make you sure you type correct)</p>
 						<input type="text" name="delete" value="Module name">
@@ -43,6 +44,7 @@
 				</td>
 				<td style="padding-left:40px">
 					<form action="edit-module-form.php" method="post">
+						<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 						Or do you want to edit a module?<br/>
 						<input type="text" name="module-name" value="Module name"/>
 						<input type="submit" value="Go!">

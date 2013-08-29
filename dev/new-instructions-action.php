@@ -1,4 +1,12 @@
 <?php
+	//this script checks if the user got to the page correctly, ie by logging in and clicking on a link from another page.
+	//otherwise the page dies and the user will not be able to access the database. Security stuff.
+	if(!isset($_POST['loggedin'])){
+		die("You got to this page directly without logging in. Or you refreshed the page... Please go log in (again).");
+	}
+?>
+
+<?php
 	$noofsteps = $_POST["noofsteps"];
 	$moduleid = $_POST["moduleid"];
 	include("../db-connect.php");
@@ -36,6 +44,7 @@
 	You have now completed the process of adding a module to the database.<br>
 	<form method="post" action="dev-welcome.php">
 		<input type="submit" value="Go back">
+		<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 	</form>
 </body>
 </html>

@@ -1,4 +1,12 @@
 <?php
+	//this script checks if the user got to the page correctly, ie by logging in and clicking on a link from another page.
+	//otherwise the page dies and the user will not be able to access the database. Security stuff.
+	if(!isset($_POST['loggedin'])){
+		die("You got to this page directly without logging in. Or you refreshed the page... Please go log in (again).");
+	}
+?>
+
+<?php
 		$numberofapps = $_POST["numberofapps"];
 		$moduleid = $_POST["moduleid"];
 		$typeid = $_POST["typeid"];
@@ -103,6 +111,7 @@
 <body>
 Go Back to Dev Home?
 <form action="dev-welcome.php" method="post">
+	<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 	<input type="submit" value="Go">
 </form>
 </body>

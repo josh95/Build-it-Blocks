@@ -1,4 +1,12 @@
 <?php
+	//this script checks if the user got to the page correctly, ie by logging in and clicking on a link from another page.
+	//otherwise the page dies and the user will not be able to access the database. Security stuff.
+	if(!isset($_POST['loggedin'])){
+		die("You got to this page directly without logging in. Or you refreshed the page... Please go log in (again).");
+	}
+?>
+
+<?php
 include("../db-connect.php");
 
 echo "module ID: " . $_POST['moduleid'] . "<br>"; //tell user module ID
@@ -116,6 +124,7 @@ if ($_FILES["download-file"]["size"] == 0){ //if download field was left blank
 		<br>
 		Module has been updated.
 		<form action="dev-welcome.php" method="post">
+			<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 			<input type="submit" value="Go to Dev Home">
 		</form>
 	</body>

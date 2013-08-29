@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+
+<?php
+	//this script checks if the user got to the page correctly, ie by logging in and clicking on a link from another page.
+	//otherwise the page dies and the user will not be able to access the database. Security stuff.
+	if(!isset($_POST['loggedin'])){
+		die("You got to this page directly without logging in. Or you refreshed the page... Please go log in (again).");
+	}
+?>
 <html>
 <head>
 	<link rel="stylesheet" type="text/CSS" href="dev-style.css"/>
@@ -7,6 +15,7 @@
 	<p id="title">Create Instructions for your module</p>
 	<br/>
 	<form action="new-instructions-action.php" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 		<?php
 		$moduleid= $_POST["moduleid"];
 		$noofsteps = $_POST["noofsteps"];

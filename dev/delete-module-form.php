@@ -1,3 +1,10 @@
+<?php
+	//this script checks if the user got to the page correctly, ie by logging in and clicking on a link from another page.
+	//otherwise the page dies and the user will not be able to access the database. Security stuff.
+	if(!isset($_POST['loggedin'])){
+		die("You got to this page directly without logging in. Or you refreshed the page... Please go log in (again).");
+	}
+?>
 <html>
 <head>
 	<link rel="stylesheeet" type="text/CSS" href="dev-style.css"/>
@@ -20,9 +27,15 @@
 		?>
 		<!--passes the variable with the user input on to delete-action page-->
 		<form action="delete-module-action.php" method="post">
-		<input type="hidden" name="delete" value="<?php echo $delete;?>"/>
-		<input type="submit" value="Yes"/>
+			<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
+			<input type="hidden" name="delete" value="<?php echo $delete;?>"/>
+			<input type="submit" value="Yes"/>
 		</form>
-		<a href="dev-welcome.php">No</a>
+			
+		<!--if you are not sure you want to delete, go back to home page-->
+		<form action="dev-welcome.php" method="post">
+			<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
+			<input type="submit" value="No"/>
+		</form>
 </body>
 </html>

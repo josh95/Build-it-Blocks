@@ -1,3 +1,11 @@
+<?php
+	//this script checks if the user got to the page correctly, ie by logging in and clicking on a link from another page.
+	//otherwise the page dies and the user will not be able to access the database. Security stuff.
+	if(!isset($_POST['loggedin'])){
+		die("You got to this page directly without logging in. Or you refreshed the page... Please go log in (again).");
+	}
+?>
+
 <html>
 <body>
 Edit Module <br>
@@ -5,7 +13,7 @@ Edit Module <br>
 
 <form action="edit-module-action.php" method="post"
 enctype="multipart/form-data">
-
+<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 <?php
 $modulename = $_POST['module-name']; //get the module name, as typed in by user on previous page.
 include("../db-connect.php");
@@ -78,6 +86,7 @@ Download Type(optional unless previous field is filled): <input type="text" name
 there is one form for each of those options-->
 
 <form action="edit-instructions-form.php" method="post"><!--edit instructions-->
+	<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 	<?php
 		$modulename = $_POST['module-name']; //get the module name, as typed in by user on previous page.
 		include("../db-connect.php");
@@ -91,6 +100,7 @@ there is one form for each of those options-->
 </form>
 
 <form action="edit-applications-form.php" method="post"><!--edit applications/overview-->
+	<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 	<?php
 		$modulename = $_POST['module-name']; //get the module name, as typed in by user on previous page.
 		include("../db-connect.php");
@@ -103,6 +113,7 @@ there is one form for each of those options-->
 </form>
 
 <form action="new-instructions-form.php" method="post"><!--add instructions-->
+	<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 	<?php
 		$modulename = $_POST['module-name']; //get the module name, as typed in by user on previous page.
 		include("../db-connect.php");
@@ -116,6 +127,7 @@ there is one form for each of those options-->
 </form>
 
 <form action="new-applications-form.php" method="post"><!--add applications-->
+	<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 	<?php
 		$modulename = $_POST['module-name']; //get the module name, as typed in by user on previous page.
 		include("../db-connect.php");
@@ -128,6 +140,11 @@ there is one form for each of those options-->
 	Add <input type="text" name="noofapps" value="1"> new applications.
 </form>
 
+<!--This is a cancel button-->
+<form action="dev-welcome.php" method="post">
+	<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
+	<input type="submit" value="Cancel"/>
+</form>
 
 </body>
 </html>
