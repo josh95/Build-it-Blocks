@@ -10,6 +10,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/CSS" href="dev-style.css"/>
+	<?php include("stop-enter-key.php");?>
 </head>
 <body>
 	<p id="title">Create Instructions for your module</p>

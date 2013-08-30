@@ -7,6 +7,9 @@
 ?>
 
 <html>
+<head>
+	<?php include("stop-enter-key.php");?>
+</head>
 <body>
 Edit Module <br>
 
