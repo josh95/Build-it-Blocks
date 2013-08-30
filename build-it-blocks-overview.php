@@ -1,8 +1,8 @@
 <!doctype html> <!--needed for IE-->
 <html>
 <head>
+	<title>Module Overview</title>
 	<LINK href="biy-stylesheet.css" rel="stylesheet" type="text/css">
-	<title>Module</title>	
 	<!-- CSS&JS for slidesjs slider -->
 	<link rel="stylesheet" href="css/slidesjs.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">

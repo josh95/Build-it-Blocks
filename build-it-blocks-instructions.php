@@ -2,7 +2,7 @@
 <html>
 <head>
 	<LINK href="biy-stylesheet.css" rel="stylesheet" type="text/css">
-	<title>Module</title>	
+	<title>Module Instructions</title>	
 	<!-- CSS&JS for slidesjs slider -->
 	<link rel="stylesheet" href="css/slidesjs.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">

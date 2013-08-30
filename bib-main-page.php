@@ -4,6 +4,8 @@
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	<link rel="stylesheet" href="menu-stylesheet.css" type="text/css" media="screen"/>
 	<link rel="stylesheet" href="biy-stylesheet.css" type="text/css" media="screen"/>
+	
+	<title>Build-it-Blocks Homepage</title>
 </head>
 <body>
 	<?php include("bib-header-menu.php");?>

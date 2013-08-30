@@ -2,6 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+	<title>Module Selection-Lego</title>
 	<script type="text/javascript" src="stickytooltip.js">
 		/***********************************************
 		* Sticky Tooltip script- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
