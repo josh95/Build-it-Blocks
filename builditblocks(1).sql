@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 26, 2013 at 11:01 PM
+-- Generation Time: Aug 30, 2013 at 04:18 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -69,8 +69,8 @@ INSERT INTO `applications` (`ID`, `moduleID`, `picture`, `description`, `title`,
 (25, 12, NULL, 'Many moons into the future, lived a crew of colorful, creative critters.', 'Hard Heads', NULL, NULL),
 (26, 12, NULL, 'These advanced humanoids evolved from the piles of garbage left by a world full of uncivilized, nat-brained humans.', 'Hard Heads', NULL, NULL),
 (27, 12, NULL, 'Build-It-Yourself crew members are on a mission to morph premium quality junk into a new generation of super heroes.', NULL, NULL, NULL),
-(28, 14, 'module-images/applications-img/junk/vertical-structure.jpg', 'You can use the Vertical Structure as a base that you can mount things on.', 'Vertical Structure', NULL, NULL),
-(29, 14, 'module-images/applications-img/junk/vertical-structure-app.jpg', 'Here is and application of the Vertical Structure', 'Apply Vertical Structure', NULL, NULL),
+(28, 14, 'module-images/applications-img/junk/vert-struc-app-1.png', 'You can use the Vertical Structure as a base that you can mount things on.', 'Vertical Structure', NULL, NULL),
+(29, 14, 'module-images/applications-img/junk/vert-struc-app-2.png', 'Here is and application of the Vertical Structure', 'Apply Vertical Structure', NULL, NULL),
 (30, 22, 'module-images/applications-img/code/bib-code-html-title-pg-500.jpg', 'Set up your website with this template.', 'Tile Page Template', NULL, NULL),
 (31, 22, 'module-images/applications-img/code/bib-code-html-title-pg-500.jpg', 'Set up your website with this template.', 'Tile Page Template', NULL, NULL),
 (32, 15, 'module-images/applications-img/lego/one-shot-catapult.png', 'This catapult fires one shot after its pin has been pulled', 'One Shot Catapult', NULL, NULL),
@@ -133,7 +133,6 @@ INSERT INTO `category_table` (`ID`, `subcategoryID`, `name`, `typeID`, `subcateg
 (7, 2, 'HTML', 4, ''),
 (8, 3, 'Javascript', 4, ''),
 (9, 4, 'Mindstorm', 4, ''),
-(10, 5, '', 4, ''),
 (11, 1, 'Logic Gates', 5, 'Learn all about OR gates!'),
 (12, 2, 'Mechanisms', 5, 'Learn all about Pistons and cool stuff!'),
 (13, 3, 'Automation', 5, 'Automate stuff.  The clue is in the title.'),
@@ -287,8 +286,8 @@ INSERT INTO `steps` (`ID`, `moduleID`, `step-number`, `image-path`, `step-descri
 (15, 8, 1, 'module-images/instruction-img/minecraft/xor-minecraft-1.png', 'Place two levers three blocks apart.  Lead a Redstone line out of the levers and in one block.', NULL, NULL, NULL),
 (16, 8, 2, 'module-images/instruction-img/minecraft/xor-minecraft-2.png', 'Place blocks with Redstone Torches on them at the ends of the Redstone lines.', NULL, NULL, NULL),
 (17, 8, 3, 'module-images/instruction-img/minecraft/xor-minecraft-3.png', 'Place lines of Redstone between the two blocks at the end of the Redstone lines.  Place another line in front of the two end blocks.   In the middle bring the line one block forward.  This is your output.', NULL, NULL, NULL),
-(18, 2, 1, 'module-images/instruction-img/not-minecraft-1.png', 'Place a lever with a line of Redstone leading out of it.', NULL, NULL, NULL),
-(19, 2, 2, 'module-images/instruction-img/not-minecraft-2.png', 'Place a block with a Redstone torch on the side of the block.', NULL, NULL, NULL),
+(18, 2, 1, 'module-images/instruction-img/minecraft/not-minecraft-1.png', 'Place a lever with a line of Redstone leading out of it.', NULL, NULL, NULL),
+(19, 2, 2, 'module-images/instruction-img/minecraft/not-minecraft-2.png', 'Place a block with a Redstone torch on the side of the block.', NULL, NULL, NULL),
 (20, 2, 3, 'module-images/instruction-img/minecraft/not-minecraft-3.png', 'Put a Redstone line coming off of the torch.', NULL, NULL, NULL),
 (21, 9, 1, 'module-images/instruction-img/lego/step-lego-motor-mount-1.jpg', 'We need these parts.', NULL, NULL, NULL),
 (22, 9, 2, 'module-images/instruction-img/lego/step-lego-motor-mount-2.jpg', 'Insert the connector pegs to the angular beams.', NULL, NULL, NULL),
@@ -323,12 +322,12 @@ INSERT INTO `steps` (`ID`, `moduleID`, `step-number`, `image-path`, `step-descri
 (55, 13, 5, 'module-images/instruction-img/art/air-heads-5.png', 'Wrap the paper to form a cylinder.', NULL, NULL, NULL),
 (56, 13, 6, 'module-images/instruction-img/art/air-heads-6.png', 'Tape a 6” pipe cleaner to the head.  This will be the neck.', NULL, NULL, NULL),
 (57, 13, 7, 'module-images/instruction-img/art/air-heads-7.png', 'Wind the pipe cleaner around a pencil to make a neck.', NULL, NULL, NULL),
-(58, 14, 2, 'module-images/instruction-img/junk/vertical-structure1.png', 'Cut cardboard 3" by 5" and tape(hot glue) 7" coffee stirrer sticks to cardboard to stiffen.', NULL, NULL, NULL),
-(59, 14, 2, 'module-images/instruction-img/junk/vertical-structure2.png', 'Mark and score on the black lines. Then cut the base sections.', NULL, NULL, NULL),
-(60, 14, 3, 'module-images/instruction-img/junk/vertical-structure3.png', 'Bend along the score lines and tape the triangular vertical structure to the base (triangles are the srtongest shape). Then cut 3" off of a straw and put tape on both sides.', NULL, NULL, NULL),
-(61, 14, 4, 'module-images/instruction-img/junk/vertical-structure4.png', 'Tape/hot glue the straw to one side of the triangle. Then tape the arm to a different side in case you want to decorate it with pipe cleaners or other decorations.', NULL, NULL, NULL),
-(62, 22, 1, 'module-images/instruction-img/code/bib-code-html-title-pg-500.jpg', 'Download the template from the link.', NULL, NULL, NULL),
-(63, 22, 2, 'module-images/instruction-img/code/bib-code-html-title-pg-500.jpg', 'Open the file in a text editor and edit the code to fit your needs.', NULL, NULL, NULL),
+(58, 14, 1, 'module-images/instruction-img/junk/vert-struc-step-1.png', 'Mark and score on the black lines. Then cut the base sections.', NULL, NULL, NULL),
+(59, 14, 2, 'module-images/instruction-img/junk/vert-struc-step-2.png', 'Mark and score on the black lines. Then cut the base sections.', NULL, NULL, NULL),
+(60, 14, 3, 'module-images/instruction-img/junk/vert-struc-step-3.png', 'Bend along the score lines and tape the triangular vertical structure to the base (triangles are the srtongest shape). Then cut 3" off of a straw and put tape on both sides.', NULL, NULL, NULL),
+(61, 14, 4, 'module-images/instruction-img/junk/vert-struc-step-4.png', 'Tape/hot glue the straw to one side of the triangle. Then tape the arm to a different side in case you want to decorate it with pipe cleaners or other decorations.', NULL, NULL, NULL),
+(62, 22, 1, 'module-images/instruction-img/code/html-home-page-1.png', 'Download the template from the link.', NULL, NULL, NULL),
+(63, 22, 2, 'module-images/instruction-img/code/html-home-page-2.png', 'Open the file in a text editor and edit the code to fit your needs.', NULL, NULL, NULL),
 (64, 15, 1, 'module-images/instruction-img/lego/one-shot-catapult-1.png', 'Assemble these parts', NULL, NULL, NULL),
 (65, 15, 2, 'module-images/instruction-img/lego/one-shot-catapult-2.png', 'Follow the image', NULL, NULL, NULL),
 (66, 15, 3, 'module-images/instruction-img/lego/one-shot-catapult-3.png', 'Now assemble these parts', NULL, NULL, NULL),

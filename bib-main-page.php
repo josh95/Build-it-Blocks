@@ -72,7 +72,7 @@
 				$info = mysqli_fetch_array( $temp ); //get first module of that list, which will be the newest
 				echo $info['name'];
 				echo "<a href='http://localhost/build-it-blocks/build-it-blocks-overview.php?id=". $info['ID'] ."'>";
-				echo "<img class=\" new-image\" src=\"". $info['icon-tooltip'] ."\">"; //get the icon-tooltip, which is a promotional image for the module
+				echo "<img class=\" new-image\" src=\"images/new-module.png\">"; //get the icon-tooltip, which is a promotional image for the module
 				echo "</a>";
 			?>
 		</div>		
