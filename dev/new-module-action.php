@@ -10,8 +10,22 @@
 <head></head>
 <body>
 <?php
+include("../db-connect.php");
 //all of these variables store what the user typed in the text boxes at the previous oage
 $name = $_POST["name"];
+
+//this is used to check if there is already a module with the same name
+$temp = mysqli_query($con, "SELECT * FROM `builditblocks`.`module_index` WHERE `name` = \"". $name. "\"");
+$nametest = mysqli_fetch_array($temp);
+
+if($nametest){ //if $nametest contains something, that means a module in the database already has the same name
+	echo "<form action=\"dev-welcome.php\" method=\"post\">";
+	echo "<input type=\"hidden\" name=\"loggedin\" value=\"1\">";
+	echo "<input type=\"submit\" value=\"Go Back\"/>";
+	echo "</form>";
+	die( "There is already a module with this name!");
+}
+
 $description = $_POST["description"];
 $difficulty = $_POST["difficulty"];
 $date = 0;
@@ -55,7 +69,6 @@ else{
 }
 
 
-include("../db-connect.php");
 //this query inserts all the variables into the database
 mysqli_query($con, "INSERT INTO `builditblocks`.`module_index` (
 	`ID`, 

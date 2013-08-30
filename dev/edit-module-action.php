@@ -20,11 +20,19 @@ if ($_POST['difficulty'] != null){ //checking if anything was written in difficu
 else
 	echo "No change to difficulty <br>";
 
-
 if ($_POST['modulename'] != null){
 	$name= $_POST['modulename'];
-	echo "changed Module's name to " . $name. "<br>";
-	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `name` = \"". $name . "\" WHERE `module_index`.`ID` =" .$_POST['moduleid']); //moduleID as given by previous page
+	//this is used to check if there is already a module with the same name
+	$temp = mysqli_query($con, "SELECT * FROM `builditblocks`.`module_index` WHERE `name` = \"". $name. "\"");
+	$nametest = mysqli_fetch_array($temp);
+	
+	if($nametest){ //if $nametest contains something, that means a module in the database already has the same name
+		echo "A module in the database already has this name. No change made to this module's name. <br>";
+	}else
+	{
+		echo "changed Module's name to " . $name. "<br>";
+		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `name` = \"". $name . "\" WHERE `module_index`.`ID` =" .$_POST['moduleid']); //moduleID as given by previous page
+	}
 }
 else
 	echo "No change to Module Name <br>";
