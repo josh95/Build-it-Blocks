@@ -43,9 +43,13 @@
 					echo "</tr>";
 				}
 			}
-			if(($i% $col)!=0){ // if the last row hasn't been closed, close the row
-					echo "</tr>";
+			if(($i% $col)!=0){ // if the last row hasn't been closed, close the row and fill up the rest of the row with empty cells
+				$extracells = $col - ($i/$col); //this is the number of empty cells that need to be put in to fill up the row
+				for($x=0;$x<$extracells;$x++){
+					echo "<td class='table-icon'>";
 				}
+				echo "</tr>";
+			}
 			mysqli_close($con);
 		?>
 	</table>
