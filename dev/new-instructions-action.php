@@ -29,7 +29,7 @@
 		$steptext = $_POST["steptext".$x];
 		
 		move_uploaded_file($_FILES["stepimg".$x]["tmp_name"],
-		"module-images/instruction-img/". $typename . "/" . $_FILES["stepimg".$x]["name"]);
+		"../module-images/instruction-img/". $typename . "/" . $_FILES["stepimg".$x]["name"]);
 		//update steps with new file path to image
 		$stepimgpath = "module-images/instruction-img/". $typename . "/" .$_FILES["stepimg".$x]["name"];
 		mysqli_query($con, "INSERT INTO `builditblocks`.`steps` (`ID`, `moduleID`,`step-number`,`image-path`, `step-description`, `related-links`, `rcxcode-robolab`,`rcxcode-mindstorms`) 

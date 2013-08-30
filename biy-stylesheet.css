@@ -1,4 +1,4 @@
-body{
+ficonbody{
 	background-color: #FFFFFF;
 }
 
@@ -382,6 +382,7 @@ a:hover
 
 .icon{
 	width:150px;
+	height:150px;
 	border:none;
 }
 

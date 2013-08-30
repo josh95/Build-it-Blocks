@@ -135,7 +135,7 @@
 						$module_download_address = $module ['download-link']; //get the download link for the module (some modules only)
 						$module_download_type = $module ['download-type']; // get the type of download: plain text,e.g. "this module"
 						if($module_download_type!= ""){
-							echo "<a href=\" ".$module_download_address."\">Download ".$module_download_type."</a>"; //if the download-type is "this module", you output "...Download this module."
+							echo "<a href=\" ".$module_download_address."\">Click here for ".$module_download_type."</a>"; //if the download-type is "this module", you output "...Download this module."
 						}
 					?>
 					<div id="build-button">

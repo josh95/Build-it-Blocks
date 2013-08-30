@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 30, 2013 at 04:18 PM
+-- Generation Time: Aug 30, 2013 at 07:16 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -35,21 +35,19 @@ CREATE TABLE IF NOT EXISTS `applications` (
   `link` varchar(200) DEFAULT NULL,
   `youtube-embedID` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
 
 --
 -- Dumping data for table `applications`
 --
 
 INSERT INTO `applications` (`ID`, `moduleID`, `picture`, `description`, `title`, `link`, `youtube-embedID`) VALUES
-(1, 1, 'module-images/applications-img/lego/clock-gear-train-overview.png', 'Here is one application of this module', 'Clock Thing', 'link', NULL),
-(2, 1, 'module-images/applications-img/lego/hat-spinner.png', 'Here is another application of this module', 'Hat?', 'link', NULL),
 (3, 2, 'module-images/applications-img/minecraft/not-minecraft.png', 'The NOT gate, otherwise known as an invertor, changes the output of the gate to the opposite of the input.  For instance, if the input is on, the output is off and vice versa.', 'Not Gate', NULL, NULL),
 (4, 5, 'module-images/applications-img/minecraft/and-minecraft.png', 'The AND gate changes the output of the gate to on when both inputs are on and off when one of the inputs is or when they are both off.', 'And Gate', NULL, NULL),
 (5, 6, 'module-images/applications-img/minecraft/t-flip-flop-minecraft.png', 'Changes a pulse into a constant output.  Changes a button into a lever essentially.', 'T Flip Flop', NULL, NULL),
 (6, 7, 'module-images/applications-img/minecraft/nand-minecraft.png', 'When the two inputs are on the output is off.  Whatever other state the Gate is in the output is on.', 'NAND Gate', NULL, NULL),
 (7, 8, 'module-images/applications-img/minecraft/xor-minecraft.png', 'If one input is on, the output is on.  In any other state the output is off.', 'XOR Gate', NULL, NULL),
-(8, 9, 'module-images/applications-img/lego/app-lego-motor-mount-overview.jpg', 'Use the basic motor mount to ... ??', 'Overview', NULL, NULL),
+(8, 9, 'module-images/applications-img/lego/app-lego-motor-mount-overview.jpg', 'Use the basic motor mount to do many things.', 'Overview', NULL, NULL),
 (9, 9, 'module-images/applications-img/lego/app-lego-motor-mount-catapult.jpg', 'Use the motor mount to pull a pin that releases a catapult.', 'Catapult', NULL, 'vBjEgL4FM2E'),
 (10, 2, 'module-images/applications-img/minecraft/not-minecraft.png', 'If you want a piston door to remain open even when the lever is off.', 'Piston Door', NULL, NULL),
 (11, 5, 'module-images/applications-img/minecraft/and-minecraft.png', 'Can be used if you want a player to have to pull two levers in order to turn on a light or activate another Redstone device.', 'Two Lever Lights', NULL, NULL),
@@ -62,13 +60,13 @@ INSERT INTO `applications` (`ID`, `moduleID`, `picture`, `description`, `title`,
 (18, 4, 'module-images/applications-img/junk/coin-spillway-make-money.png', 'Get money! Get Paid!', 'Go make that Cash Money!', NULL, NULL),
 (19, 11, 'module-images/applications-img/junk/bridge-overview.png', 'The Premium Quality Junk Yard is on a remote island.  Most people don’t want to live near a dump.  Ugly sights, wicked foul smells, pesky pigeons who haven’t been toilet trained and more messiness! ', 'The Problem', NULL, NULL),
 (20, 11, 'module-images/applications-img/junk/bridge-overview.png', 'A bridge to support the weight of a truck! A toy one anyways...', 'Your Mission', NULL, NULL),
-(21, 13, 'module-images/applications-img/art/air-head-1.png', 'Many moons into the future, lived a crew of colorful, creative critters.', 'Air Heads', NULL, NULL),
-(22, 13, 'module-images/applications-img/art/air-head-2.png', 'These advanced humanoids evolved from the piles of garbage left by a world full of uncivilized, nat-brained humans.', 'Air Heads', NULL, NULL),
-(23, 13, 'module-images/applications-img/art/air-head-3.png', 'Build-It-Yourself crew members are on a mission to morph premium quality junk into a new generation of super heroes.', 'Air Heads', NULL, NULL),
-(24, 13, 'module-images/applications-img/art/air-head-4.png', 'This guy is swag. Bro Swag', 'Cool Robo Head', NULL, NULL),
-(25, 12, NULL, 'Many moons into the future, lived a crew of colorful, creative critters.', 'Hard Heads', NULL, NULL),
-(26, 12, NULL, 'These advanced humanoids evolved from the piles of garbage left by a world full of uncivilized, nat-brained humans.', 'Hard Heads', NULL, NULL),
-(27, 12, NULL, 'Build-It-Yourself crew members are on a mission to morph premium quality junk into a new generation of super heroes.', NULL, NULL, NULL),
+(21, 24, 'module-images/applications-img/art/air-head-1.png', 'Many moons into the future, lived a crew of colorful, creative critters.  These advanced humanoids evolved from the piles of garbage left by a world full of uncivilized, nat-brained humans.', 'Cone Heads', NULL, NULL),
+(22, 24, 'module-images/applications-img/art/air-head-2.png', 'Build-It-Yourself crew members are on a mission to morph premium quality junk into a new generation of super heroes.', 'Cone Heads', NULL, NULL),
+(23, 13, 'module-images/applications-img/art/air-head-3.png', 'Many moons into the future, lived a crew of colorful, creative critters.  These advanced humanoids evolved from the piles of garbage left by a world full of uncivilized, nat-brained humans.', 'Air Heads', NULL, NULL),
+(24, 13, 'module-images/applications-img/art/air-head-4.png', 'Build-It-Yourself crew members are on a mission to morph premium quality junk into a new generation of super heroes.', 'Air Heads', NULL, NULL),
+(25, 12, 'module-images/applications-img/art/hard-heads-app-1.png', 'Many moons into the future, lived a crew of colorful, creative critters.', 'Hard Heads', NULL, NULL),
+(26, 12, 'module-images/applications-img/art/hard-heads-app-2.png', 'These advanced humanoids evolved from the piles of garbage left by a world full of uncivilized, nat-brained humans.', 'Hard Heads', NULL, NULL),
+(27, 12, 'module-images/applications-img/art/hard-heads-app-3.png', 'Build-It-Yourself crew members are on a mission to morph premium quality junk into a new generation of super heroes.', NULL, NULL, NULL),
 (28, 14, 'module-images/applications-img/junk/vert-struc-app-1.png', 'You can use the Vertical Structure as a base that you can mount things on.', 'Vertical Structure', NULL, NULL),
 (29, 14, 'module-images/applications-img/junk/vert-struc-app-2.png', 'Here is and application of the Vertical Structure', 'Apply Vertical Structure', NULL, NULL),
 (30, 22, 'module-images/applications-img/code/bib-code-html-title-pg-500.jpg', 'Set up your website with this template.', 'Tile Page Template', NULL, NULL),
@@ -79,7 +77,17 @@ INSERT INTO `applications` (`ID`, `moduleID`, `picture`, `description`, `title`,
 (35, 16, 'module-images/applications-img/lego/fwd-rev-chassis.png', 'A moving robot.', 'An Application', NULL, NULL),
 (36, 18, 'module-images/applications-img/art/cartoons-app-1.png', 'Some silly cartoon faces', 'Cartoon Faces', NULL, NULL),
 (37, 18, 'module-images/applications-img/art/cartoons-app-2.png', 'More silly cartoon faces', 'Cartoon Faces', NULL, NULL),
-(38, 18, 'module-images/applications-img/art/cartoons-app-3.png', 'Even more silly faces', 'Cartoon Faces', NULL, NULL);
+(38, 18, 'module-images/applications-img/art/cartoons-app-3.png', 'Even more silly faces', 'Cartoon Faces', NULL, NULL),
+(39, 17, 'module-images/applications-img/lego/up-down-swing-1.png', 'This module lets you move something up and down.', 'Up Down Swing', '', NULL),
+(40, 17, 'module-images/applications-img/lego/up-down-swing-2.png', 'It can be used for many things like waving a sign or beating a drum.', 'Uses', NULL, NULL),
+(41, 17, 'module-images/applications-img/lego/up-down-swing-explained-1.png', 'The arm motion is driven by a rotating cam.  The shape and position of the cam will change the arm motion.', 'Application Notes', NULL, NULL),
+(42, 17, 'module-images/applications-img/lego/up-down-swing-explained-2.png', 'The arm can lift a heavier load if the cam rotates such that it first hits the arm away from the fulcrum or arm rotating point.', 'Application Notes', NULL, NULL),
+(43, 17, 'module-images/applications-img/lego/up-down-swing-explained-3.png', 'Positioning the fulcrum can change the distance the arm moves or the load it can move.', 'Application Notes', NULL, NULL),
+(44, 24, 'module-images/applications-img/art/cone-heads-app.png', 'Say hello to my little friends.', 'Some other cone heads!', NULL, NULL),
+(45, 25, 'module-images/applications-img/junk/pinwheel-step-app.png', 'This modules is capable of spinning', 'Pinwheel', NULL, NULL),
+(46, 25, 'module-images/applications-img/junk/pinwheel-step-5.png', 'Use it to build a windmill, or some other cool rotating device.', 'Pinwheel', NULL, NULL),
+(47, 21, 'module-images/applications-img/code/scratch-rocket-controls-overview.png', 'Try this template if you would like to control your rocket in space to land of different planets. ', 'Scratch Rocket Controls', NULL, NULL),
+(48, 21, 'module-images/applications-img/code/scratch-rocket-controls-overview.png', 'Try this template if you would like to control your rocket in space to land of different planets. ', 'Scratch Rocket Controls', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -183,14 +191,13 @@ CREATE TABLE IF NOT EXISTS `module_index` (
   `download-link` varchar(250) NOT NULL,
   `download-type` varchar(100) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `module_index`
 --
 
 INSERT INTO `module_index` (`ID`, `partnerID`, `name`, `difficulty`, `description`, `date-posted`, `type`, `subcategoryID`, `authorID`, `popularity`, `icon`, `icon-tooltip`, `icon-alt-text`, `download-link`, `download-type`) VALUES
-(1, 1, 'Clock Gear Train', 2, 'The spins and stuff', '2013-06-03', 2, 1, 1, 0, 'module-images/icons/lego-clock.jpg', 'http://1-ps.googleusercontent.com/h/www.catgifpage.com/gifs/186.gif.pagespeed.ce.Z_8F-7SNTG.gif', '', 'http://www.invention-universe.com/val/', 'Schematic'),
 (2, 1, 'NOT Gate', 1, 'The NOT gate, otherwise known as an invertor, changes the output of the gate to the opposite of the input.  For instance, if the input is on, the output is off and vice versa.', '2013-07-15', 5, 1, 5, 0, 'module-images/icons/minecraft-not.png', 'http://1-ps.googleusercontent.com/h/www.catgifpage.com/gifs/185.gif.pagespeed.ce.yvDfYyj82d.gif', '', 'http://www.invention-universe.com/val/', 'Schematic'),
 (3, 1, 'Junk Catapult', 2, 'A catapult made from junk. Launch candy!', '2013-08-16', 1, 4, 2, 0, 'module-images/icons/junk-catapult-icon.png', 'module-images/icons/tooltip-icons/junk-catapult-overview.png', '', '', ''),
 (4, 1, 'Coin Spillway', 2, 'A structure to direct your coins', '2013-08-16', 1, 5, 2, 0, 'module-images/icons/coin-spillway-icon.png', '', '', '', ''),
@@ -209,9 +216,11 @@ INSERT INTO `module_index` (`ID`, `partnerID`, `name`, `difficulty`, `descriptio
 (18, NULL, 'Cartooning', 1, 'Use powerpoint to make some funky faces', '2013-08-26', 3, 1, 2, 0, 'module-images/icons/bib-art-cartoon-icon.jpg', '', '', '', ''),
 (19, NULL, 'Animation', 3, 'Make some cool animated gifs', '2013-08-26', 3, 1, 2, 0, 'module-images/icons/bib-art-anim-icon.gif', '', '', '', ''),
 (20, NULL, 'Graffiti', 1, 'Awesome graffiti to get your message out!', '2013-08-26', 3, 1, 2, 0, 'module-images/icons/bib-art-graffiti-icon.jpg', '', '', '', ''),
-(21, NULL, 'Scratch Rocket Control', 1, 'Control a Scratch Rocket with the arrow keys', '2013-08-26', 4, 1, 2, 0, 'module-images/icons/bib-code-scratch-rkt-ctrl-arrow-icon.gif', '', '', '', ''),
+(21, NULL, 'Scratch Rocket Control', 1, 'Control a Scratch Rocket with the arrow keys', '2013-08-26', 4, 1, 2, 0, 'module-images/icons/bib-code-scratch-rkt-ctrl-arrow-icon.gif', '', '', 'http://scratch.mit.edu/projects/1491292/', 'a link to this program'),
 (22, NULL, 'Home Page Template', 1, 'A template for a home page of your website', '2013-08-26', 4, 2, 2, 0, 'module-images/icons/bib-code-html-title-icon.jpg', '', '', 'module-resources/home-page.htm', 'HTML Template'),
-(23, NULL, 'Scratch Coins', 2, 'Make some coins?', '2013-08-26', 4, 1, 2, 0, 'module-images/icons/bib-code-scratch-coins-icon.jpg', '', '', '', '');
+(23, NULL, 'Scratch Coins', 2, 'Make some coins?', '2013-08-26', 4, 1, 2, 0, 'module-images/icons/bib-code-scratch-coins-icon.jpg', '', '', '', ''),
+(24, NULL, 'Cone Heads', 1, '', '2013-08-30', 3, 2, 2, 0, ' module-images/icons/cone-heads.png', '', '', '', ''),
+(25, NULL, 'Pinwheel', 1, 'This is a a device that spins. Wee.', '0000-00-00', 1, 1, 2, 9, 'module-images/icons/pinwheel-icon.png', '', '', 'module-resources/bib-junk-pinwheel.ppt', 'Powerpoint');
 
 -- --------------------------------------------------------
 
@@ -262,16 +271,13 @@ CREATE TABLE IF NOT EXISTS `steps` (
   `rcxcode-robolab` varchar(100) DEFAULT NULL,
   `rcxcode-mindstorms` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=85 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=125 ;
 
 --
 -- Dumping data for table `steps`
 --
 
 INSERT INTO `steps` (`ID`, `moduleID`, `step-number`, `image-path`, `step-description`, `related-links`, `rcxcode-robolab`, `rcxcode-mindstorms`) VALUES
-(1, 1, 1, 'module-images/instruction-img/lego/clock-lego-01.jpg', 'Step 1 text', NULL, NULL, NULL),
-(2, 1, 2, 'module-images/instruction-img/lego/clock-lego-02.jpg', 'Step 2 text', NULL, NULL, NULL),
-(3, 1, 3, 'module-images/instruction-img/lego/clock-lego-03.jpg', 'Step 3 text', NULL, NULL, NULL),
 (4, 5, 1, 'module-images/instruction-img/minecraft/and-minecraft-1.png', ' Place two levers one block apart with a line of Redstone coming out of each lever.', NULL, NULL, NULL),
 (5, 5, 2, 'module-images/instruction-img/minecraft/and-minecraft-2.png', 'Place 3 blocks connecting the two Redstone lines.  Place a Redstone Torch on top of the blocks with Redstone leading into them.  Place Redstone linking the two torches.', NULL, NULL, NULL),
 (6, 5, 3, 'module-images/instruction-img/minecraft/and-minecraft-3.png', 'Place a Redstone Torch on the side of the block with Redstone on top and take an output off of that Torch.', NULL, NULL, NULL),
@@ -348,7 +354,42 @@ INSERT INTO `steps` (`ID`, `moduleID`, `step-number`, `image-path`, `step-descri
 (81, 18, 3, 'module-images/instruction-img/art/cartoons-3.png', 'Create interesting, unusual 3-D structures by laying basic shapes on top of each other.', NULL, NULL, NULL),
 (82, 18, 4, 'module-images/instruction-img/art/cartoons-4.png', 'Your cartoon will look more life-like if you use 2 colors.', NULL, NULL, NULL),
 (83, 18, 5, 'module-images/instruction-img/art/cartoons-5.png', 'This rather complex nose shape is just 3 ovals on top of each other.', NULL, NULL, NULL),
-(84, 18, 6, 'module-images/instruction-img/art/cartoons-6.png', 'This could be a guy or a gal depending on the hair you add.', NULL, NULL, NULL);
+(84, 18, 6, 'module-images/instruction-img/art/cartoons-6.png', 'This could be a guy or a gal depending on the hair you add.', NULL, NULL, NULL),
+(85, 17, 1, 'module-images/instruction-img/lego/up-down-swing-step-1.png', 'You will need these parts.', NULL, NULL, NULL),
+(86, 17, 2, 'module-images/instruction-img/lego/up-down-swing-step-2.png', NULL, NULL, NULL, NULL),
+(87, 17, 3, 'module-images/instruction-img/lego/up-down-swing-step-3.png', NULL, NULL, NULL, NULL),
+(88, 17, 4, 'module-images/instruction-img/lego/up-down-swing-step-4.png', NULL, NULL, NULL, NULL),
+(89, 17, 5, 'module-images/instruction-img/lego/up-down-swing-step-5.png', 'Finished!', NULL, NULL, NULL),
+(90, 24, 1, 'module-images/instruction-img/art/air-heads-1.png', 'You’ll need these tools: Scissors Ruler Black Sharpie Pen Red, Green, Blue pencils Scotch Tape Glue Gun', NULL, NULL, NULL),
+(91, 24, 2, 'module-images/instruction-img/art/air-heads-2.png', 'And you’ll need some premium quality junk: Pipe Cleaners 2”x4” sheets of paper Cloth Beads Nuts Rocks Corks Feathers Yarn Foamies', NULL, NULL, NULL),
+(92, 24, 1, 'module-images/instruction-img/art/cone-heads-step-3.png', 'Cut a piece of paper  	2” x 3”. ', NULL, NULL, NULL),
+(93, 24, 2, 'module-images/instruction-img/art/cone-heads-step-4.png', 'Wrap the paper like an ice cream cone. <br> Tape it. <br> Trim it', NULL, NULL, NULL),
+(94, 24, 5, 'module-images/instruction-img/art/cone-heads-step-5.png', 'Draw a set of BIG eyes from a piece of white paper or foam rubber.   <br> Add a touch of color.', NULL, NULL, NULL),
+(95, 24, 6, 'module-images/instruction-img/art/cone-heads-step-6.png', 'Cut a piece of yarn 6” long.  <br>Wind 10-20 loops around your fingers.', NULL, NULL, NULL),
+(96, 24, 7, 'module-images/instruction-img/art/cone-heads-step-7.png', 'Position the string sections<br>Tie the string in the center.', NULL, NULL, NULL),
+(97, 24, 8, 'module-images/instruction-img/art/cone-heads-step-8.png', 'Cut the 2 loops <br> Glue or tape it onto your head and give your critter a hair cut.', NULL, NULL, NULL),
+(98, 24, 9, 'module-images/instruction-img/art/cone-heads-step-9.png', 'Feathers, pipe cleaners or wire can also be used for hair.', NULL, NULL, NULL),
+(99, 24, 10, 'module-images/instruction-img/art/cone-heads-step-10.png', 'Wrap a pipe cleaner around a pencil. <br> Curl the end so you have a large area to tape or glue the neck to the head.', NULL, NULL, NULL),
+(100, 24, 11, 'module-images/instruction-img/art/cone-heads-step-11.png', 'This neck enables you to mount your head on any small shaft like a pencil. <br> Also this neck enables your head to move.', NULL, NULL, NULL),
+(101, 24, 12, 'module-images/instruction-img/art/cone-heads-step-12.png', 'Arms and legs for a large critter. <br> Don’t be shy about exaggerating the hands and feet. ', NULL, NULL, NULL),
+(102, 12, 1, 'module-images/instruction-img/art/air-heads-1.png', 'You’ll need these tools: Scissors Ruler Black Sharpie Pen Red, Green, Blue pencils Scotch Tape Glue Gun', NULL, NULL, NULL),
+(103, 12, 2, 'module-images/instruction-img/art/air-heads-2.png', 'And you’ll need some premium quality junk: Pipe Cleaners 2”x4” sheets of paper Cloth Beads Nuts Rocks Corks Feathers Yarn Foamies', NULL, NULL, NULL),
+(104, 12, 3, 'module-images/instruction-img/art/cone-heads-step-5.png', 'Draw a set of BIG eyes from a piece of white paper or foam rubber.   <br> Add a touch of color.', NULL, NULL, NULL),
+(105, 12, 4, 'module-images/instruction-img/art/cone-heads-step-6.png', 'Cut a piece of yarn 6” long.  <br>Wind 10-20 loops around your fingers.', NULL, NULL, NULL),
+(106, 12, 5, 'module-images/instruction-img/art/cone-heads-step-7.png', 'Position the string sections<br>Tie the string in the center.', NULL, NULL, NULL),
+(107, 12, 6, 'module-images/instruction-img/art/cone-heads-step-8.png', 'Cut the 2 loops <br> Glue or tape it onto your head and give your critter a hair cut.', NULL, NULL, NULL),
+(108, 12, 7, 'module-images/instruction-img/art/cone-heads-step-9.png', 'Feathers, pipe cleaners or wire can also be used for hair.', NULL, NULL, NULL),
+(109, 12, 8, 'module-images/instruction-img/art/cone-heads-step-10.png', 'Wrap a pipe cleaner around a pencil. <br> Curl the end so you have a large area to tape or glue the neck to the head.', NULL, NULL, NULL),
+(110, 12, 9, 'module-images/instruction-img/art/cone-heads-step-11.png', 'This neck enables you to mount your head on any small shaft like a pencil. <br> Also this neck enables your head to move.', NULL, NULL, NULL),
+(111, 12, 10, 'module-images/instruction-img/art/cone-heads-step-12.png', 'Arms and legs for a large critter. <br> Don’t be shy about exaggerating the hands and feet. ', NULL, NULL, NULL),
+(112, 25, 1, 'module-images/instruction-img/junk/pinwheel-step-1.png', 'Materials 	- 1 piece of cardboard 	- 1 piece of foam 	- 1 paper clip 	- 1 chop stick 	- 4 coffee stirrer sticks <br><br>Tools 	- tape 	- scissors 	- pencil 	- hot glue gun 	- glue stick 	- ruler 	-cutting matt', NULL, NULL, NULL),
+(113, 25, 2, 'module-images/instruction-img/junk/pinwheel-step-2.png', 'Collect pieces	 	- Cut 2”x2” inch square out of cardboard. 	- Cut two 1”x 0.5” rectangle out of foam. <br><br>Mark the center of the cardboard by drawing 2 diagonal lines from the corners.', NULL, NULL, NULL),
+(114, 25, 3, 'module-images/instruction-img/junk/pinwheel-step-3.png', 'Poke a hole 	- Use your pencil to poke a hole in the middle of the cardboard square 	- Position the scissors so your pencil pokes through the cardboard between the scissor blade.   (Not into your finger.)', NULL, NULL, NULL),
+(115, 25, 4, 'module-images/instruction-img/junk/pinwheel-step-4.png', 'Glue coffee stirrer sticks to the cardboard.', NULL, NULL, NULL),
+(116, 25, 5, 'module-images/instruction-img/junk/pinwheel-step-5.png', 'Take your chopstick put it though the hole of your base Put pinwheel on your chopstick <br> Done!', NULL, NULL, NULL),
+(122, 21, 1, 'module-images/instruction-img/code/scratch-rocket-controls-step-1.png', 'Click on the link to the scratch program.', NULL, NULL, NULL),
+(123, 21, 2, 'module-images/instruction-img/code/scratch-rocket-controls-step-2.png', 'After getting to the MIT Scratch site, click on the "look inside" button to see the code.', NULL, NULL, NULL),
+(124, 21, 3, 'module-images/instruction-img/code/scratch-rocket-controls-step-3.png', 'Edit the code to your liking!', NULL, NULL, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
