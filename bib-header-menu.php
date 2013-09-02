@@ -11,7 +11,8 @@
 			<!-- If clicked, it stays on button-down.png at all times.  -->
 				<div id="home" class="menu-button-blocks">
 					<img src="images/build-it-blocks-home-button.png" style="border:none;"> <!--border:none needed for IE-->
-					<!--I really really like it with one word only; we could always make it back to 'Blocks Home' :)-->
+					<!--NOT APPLICABLE ANYMORE, as it's a picture now:
+						I really really like it with one word only; we could always make it back to 'Blocks Home' :)-->
 				</div>
 			</a>
 		</li>
