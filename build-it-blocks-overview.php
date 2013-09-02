@@ -96,7 +96,7 @@
 					<div  class=\"module-subtitle\">Added by <a style='color:blue;' href=\"". $curr_author['website'] ."\">" . $curr_author_name. "</a> on " . $curr_date. "</div>
 				 </div>"; //note: inline styling needed to override styling for links
 		?>
-		<div class="line"></div>
+		<hr/>
 		<br>
 	</div>
 	<div id="overview">

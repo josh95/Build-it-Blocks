@@ -4,12 +4,11 @@
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	<link rel="stylesheet" href="menu-stylesheet.css" type="text/css" media="screen"/>
 	<link rel="stylesheet" href="biy-stylesheet.css" type="text/css" media="screen"/>
-	
 	<title>Build-it-Blocks Homepage</title>
 </head>
 <body>
 	<?php include("bib-header-menu.php");?>
-	<div class="gray-line"></div>
+	<hr/>
 	<div class="bib-description-wrapper">
 		<div class="module-title">
 			Build-It-Blocks is a library of modules that will enable you to build complex projects quickly and reliably.

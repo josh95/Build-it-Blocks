@@ -111,7 +111,7 @@
 	<script>
 		//changeCategory(0,0); //view all is selected by default, CAUSING ISSUES
 	</script>	
-	<div class="gray-line"></div>
+	<hr/>
 	<div id="content"> <!-- This contains the icons of all the modules. When changeCategory is called the innerHTML of content is changed-->
 		<img class="charlotte" src="images/charlotte.png">
 	</div>

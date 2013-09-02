@@ -109,7 +109,7 @@
 			?>
 		</ul>
 	</div>
-	<div class="gray-line"></div>
+	<hr/>
 	<div id="content">
 		<img class="charlotte" src="images/charlotte.png">
 	</div>

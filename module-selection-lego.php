@@ -110,7 +110,7 @@
 	<script> 
 		//changeCategory(0,0); //view all is selected by default, CAUSING ISSUES
 	</script>
-	<div class="gray-line"></div>
+	<hr/>
 	<div id="content">
 		<img class="charlotte" src="images/charlotte.png">
 	</div>
