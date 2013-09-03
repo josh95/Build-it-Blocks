@@ -44,13 +44,13 @@
 	<script language="javascript">
 	function numberofCats(){ //counts the number of categories that type has
 		<?php
-		include("db-connect.php");
-		$temp = mysqli_query($con, "SELECT * FROM `category_table` WHERE `typeID`= 2"); //typeID =2 lego
-		$counter=0;
-		while($info = mysqli_fetch_array( $temp )){
-			$counter++;
-		}
-		echo "var cats =" .$counter. ";"; 
+			include("db-connect.php");
+			$temp = mysqli_query($con, "SELECT * FROM `category_table` WHERE `typeID`= 2"); //typeID =2 lego
+			$counter=0;
+			while($info = mysqli_fetch_array( $temp )){
+				$counter++;
+			}
+			echo "var cats =" .$counter. ";"; 
 		?>
 		return cats;
 	}

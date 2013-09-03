@@ -12,7 +12,6 @@
 	<!-- End CSS&JS for slidesjs slider -->
 	<script type="text/javascript">
 		var step=1; //variable that tracks which step you are on
-		
 		var stepArr = new Array(); //contains all instruction text
 		<?php // this PHP script gets all the Applications/Instructions information about the module so that it can replace the content of the slider. :)
 			include("db-connect.php");
@@ -26,7 +25,6 @@
 			}
 		?>		
 		function changeStep(number){
-		
 			var newStep = stepArr[number-1];
 			document.getElementById("caption2").innerHTML="<h4> Step: " + number + "</h4>"  + newStep;
 		}
@@ -36,10 +34,7 @@
 			$('#slides2').slidesjs({
 				width: 400,
 				height: 300,
-				navigation: false,
-				
-				
-				
+				navigation: false,			
 				callback:{
 					complete: function(number){
 						changeStep(number);

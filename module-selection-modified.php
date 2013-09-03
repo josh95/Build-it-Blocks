@@ -18,7 +18,6 @@
 			//defining variables:
 			$i=0;
 			$col=4; //we have $col modules per row in the table
-			
 			include("db-connect.php"); //the db-connect.php file contains a single line that connects to the database
 			$subcat = $_GET["cat"]; //take the subcategory: differs for every type
 			$type = $_GET["type"]; // take the category/type of modules: 1 for Junk; 2 for LEGO; 3 for Art; 4 for Code; 5 for Minecraft
@@ -53,9 +52,7 @@
 			mysqli_close($con);
 		?>
 	</table>
-	
 	<!--below we extract the images for the sticky-tooltip plugin-->
-	
 	<div id="mystickytooltip" class="stickytooltip">
 		<div style="padding:5px">
 			<?php // we need to extract the modules from the database again for the tooltip images
@@ -83,6 +80,5 @@
 		</div>
 		<div class="stickystatus"></div>
 	</div>
-	
 </body>
 </html>

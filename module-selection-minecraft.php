@@ -20,7 +20,6 @@
 			$("#menu-jquery li").show(300, function(){  //300 is the speed at which show animation plays
 			changeCategory(0,0); //this makes view all selected by default
 			$('#menu-jquery li').hover(				//the hover function only plays after the show animation is finished
-				
 				function() {					
 					$(this).css('padding', '3px 0px 0px 0px')
 					.stop()
@@ -45,13 +44,13 @@
 	<script language="javascript">
 	function numberofCats(){  //counts the number of categories that type has
 		<?php
-		include("db-connect.php");
-		$temp = mysqli_query($con, "SELECT * FROM `category_table` WHERE `typeID`= 5"); //typeID =5 for minecraft
-		$counter=0;
-		while($info = mysqli_fetch_array( $temp )){
-			$counter++;
-		}
-		echo "var cats =" .$counter. ";"; 
+			include("db-connect.php");
+			$temp = mysqli_query($con, "SELECT * FROM `category_table` WHERE `typeID`= 5"); //typeID =5 for minecraft
+			$counter=0;
+			while($info = mysqli_fetch_array( $temp )){
+				$counter++;
+			}
+			echo "var cats =" .$counter. ";"; 
 		?>
 		return cats;
 	}

@@ -31,7 +31,6 @@
 										 'fast');
 				}, 
 				function() {
-					
 					$(this).css('padding', '3px 0px 0px 0px')
 					.stop()
 							 .animate({'paddingLeft'	: '0px', 

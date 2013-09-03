@@ -78,7 +78,6 @@
 		document.getElementById(divId).style.backgroundImage="url('images/button-down.png')"; //change the background image to let users know that they are on this module selection page
 		document.getElementById(divID).onmouseout=""; //remove the mouseout event so that it does not change back when hovering
 	</script>
-	
 	<div class="centered-div">
 		<?php // this script gets the title, author and date of the module; they are displayed as a top bar.
 			include("db-connect.php");
@@ -124,7 +123,6 @@
 					<script>
 							changeApp(1); //changeApp(1) sets the caption to the first application
 					</script>
-				
 				</div>
 				<div id="build-it-button"> <!--user clicks the button -> gets redirected to the Instructions slider-->
 					<?php
@@ -148,8 +146,6 @@
 			</div> <!-- caption-and-button ends here-->	
 		</div>      	
 	</div>
-	
-
 	<div class="bottom-info">
 		<?php include("biy-bottom-info.html"); ?>
 	</div>

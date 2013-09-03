@@ -12,7 +12,8 @@
 				<div id="home" class="menu-button-blocks">
 					<img src="images/build-it-blocks-home-button.png" style="border:none;"> <!--border:none needed for IE-->
 					<!--NOT APPLICABLE ANYMORE, as it's a picture now:
-						I really really like it with one word only; we could always make it back to 'Blocks Home' :)-->
+					I really really like it with one word only; we could always make it back to 'Blocks Home' :)
+					-->
 				</div>
 			</a>
 		</li>
