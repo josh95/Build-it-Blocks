@@ -44,6 +44,14 @@ if ($_POST['subcategoryID'] != 0){
 }
 else
 	echo "No change to Subcategory ID <br>";
+	
+if ($_POST['year'] != "select" && $_POST['month'] != "select" && $_POST['day'] != "select"){ //user put in a year, month, and day
+	$date = $_POST['year']."-".$_POST['month']."-".$_POST['day'];
+	echo "changed date posted to " . $date. "<br>";
+	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `date-posted` = \"". $date . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
+}
+else
+	echo "No change to date posted.<br>";
 
 if ($_POST['authorID'] != 0){
 	$author= $_POST['authorID'];

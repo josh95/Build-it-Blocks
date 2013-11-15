@@ -28,7 +28,6 @@ if($nametest){ //if $nametest contains something, that means a module in the dat
 
 $description = $_POST["description"];
 $difficulty = $_POST["difficulty"];
-$date = 0;
 $type = $_POST["type"];
 $subcatid = $_POST["subcatid"];
 $authorID = $_POST["authorID"];
@@ -88,7 +87,7 @@ mysqli_query($con, "INSERT INTO `builditblocks`.`module_index` (
 	`download-type`
 	)
 	VALUES (
-	NULL, NULL, \"".$name."\", \"" . $description. "\",". $difficulty .", '0',". $type .",". $subcatid .",". $authorID .", '9',\"" . $iconpath . "\",\"". $icontooltippath ."\", '',\"". $downloadlink ."\", \"". $downloadtype ."\")"
+	NULL, NULL, \"".$name."\", \"" . $description. "\",". $difficulty .", CURDATE() ,". $type .",". $subcatid .",". $authorID .", '9',\"" . $iconpath . "\",\"". $icontooltippath ."\", '',\"". $downloadlink ."\", \"". $downloadtype ."\")"
 );
 
 echo "Thank You for adding the module " . $name . " to the database. Now please proceed to filling out its applications and overview.";

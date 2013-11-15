@@ -15,6 +15,8 @@
 <body>
 	<p id="title">Create Applications for your module</p>
 	<br/>
+	Note: Please escape special chracters whenever possible. It will reduce the amount of errors.
+	Read about escaping characters <a href="http://www.w3.org/International/questions/qa-escapes">here</a> .
 	<form action="new-applications-action.php" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 		Overview Image: <input type="file" name="overviewimg"/>   Text: <input type="text" name="overviewtext">   Title: <input type="text" name="overviewtitle"><br/><br/>
