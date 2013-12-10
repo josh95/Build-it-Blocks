@@ -19,7 +19,8 @@
 	Read about escaping characters <a href="http://www.w3.org/International/questions/qa-escapes">here</a> .
 	<form action="new-applications-action.php" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
-		Overview Image: <input type="file" name="overviewimg"/>   Text: <input type="text" name="overviewtext">   Title: <input type="text" name="overviewtitle"><br/><br/>
+		Overview Image: <input type="file" name="overviewimg"/>   Text: <textarea name='overviewtext' cols='40' rows='5'></textarea>  <br>
+		Title: <input type="text" name="overviewtitle"><br/><br/>
 		<?php
 		$moduleid= $_POST["moduleid"];
 		$noofapps = $_POST["noofapps"];
@@ -27,7 +28,8 @@
 		//for loop takes the amount of applications the user said they would have in previous page and echos out the places they can add the values
 		for ($x=1; $x<=$noofapps; $x++) {
 		echo "Application " . $x . " image: <input type='file' name='appimg" . $x . "'>  
-		Text: <input type='text' name='apptext" . $x . "'>   Title: <input type='text' name='apptitle" . $x . "'> <br/><br/>";
+		Text: <textarea name='apptext".$x."' cols='40' rows='5'></textarea>  <br>
+		Title: <input type='text' name='apptitle" . $x . "'> <br/><br/>";
 		}
 		//pass on the number of apps and module id
 		echo "<input type=\"hidden\" name=\"moduleid\" value=\"". $moduleid ."\">";

@@ -19,7 +19,7 @@
 	<form name="input" method="post" action="new-module-action.php" enctype="multipart/form-data">
 	<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 	Module Name:<input type="text" name="name"/><br/><br/>
-	Description: <input type="text" name="description" style="height:50px"><br/><br/>
+	Description: <textarea name='description' cols='40' rows='5'></textarea><br/><br/>
 	Difficulty:<input type="text" name="difficulty"/><br/><br/>
 	Date Posted:<?php echo date('m-j-Y');?><br />
 	<br />
