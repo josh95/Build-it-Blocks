@@ -10,6 +10,14 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/CSS" href="dev-style.css"/>
+	
+	<script>
+		function fillInName(nameofmodule){
+			//when clicking the names of the modules on the list, change the text field of the delete and edit modules to the module clicked
+			document.getElementById("delete").value=nameofmodule;
+			document.getElementById("edit").value=nameofmodule;
+		}
+	</script>
 </head>
 <body>
 
@@ -38,7 +46,7 @@
 						<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 						Do you want to delete a module?
 						<p>(make you sure you type correct)</p>
-						<input type="text" name="delete" value="Module name">
+						<input id="delete" type="text" name="delete" value="Module name">
 						<input type="submit" value="Go!">
 					</form>
 				</td>
@@ -46,7 +54,7 @@
 					<form action="edit-module-form.php" method="post">
 						<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 						Or do you want to edit a module?<br/>
-						<input type="text" name="module-name" value="Module name"/>
+						<input id="edit" type="text" name="module-name" value="Module name"/>
 						<input type="submit" value="Go!">
 					</form>
 					
@@ -66,7 +74,7 @@
 	while($module = mysqli_fetch_array($temp)) {
 	 "moduleArray[".$i."]=\"" . $module["name"]."\";" ;
 		$i++;
-		echo "<li>" . $module["name"] . "</li>";
+		echo "<li onClick=\"fillInName('".$module["name"]."')\" >" . $module["name"] . "</li>";
 	}
 		echo "</ul></td>";
 		echo "<td><ul>";
@@ -77,7 +85,7 @@
 	while($module = mysqli_fetch_array($temp)) {
 	 "moduleArray[".$i."]=\"" . $module["name"]."\";" ;
 		$i++;
-		echo "<li>" . $module["name"] . "</li>";
+		echo "<li onClick=\"fillInName('".$module["name"]."')\" >" . $module["name"] . "</li>";
 	}
 		echo "</ul></td>";
 		echo "<td><ul>";
@@ -88,7 +96,7 @@
 	while($module = mysqli_fetch_array($temp)) {
 	 "moduleArray[".$i."]=\"" . $module["name"]."\";" ;
 		$i++;
-		echo "<li>" . $module["name"] . "</li>";
+		echo "<li onClick=\"fillInName('".$module["name"]."')\" >" . $module["name"] . "</li>";
 	}
 		echo "</ul></td>";
 		echo "<td><ul>";
@@ -99,7 +107,7 @@
 	while($module = mysqli_fetch_array($temp)) {
 	 "moduleArray[".$i."]=\"" . $module["name"]."\";" ;
 		$i++;
-		echo "<li>" . $module["name"] . "</li>";
+		echo "<li onClick=\"fillInName('".$module["name"]."')\" >" . $module["name"] . "</li>";
 	}
 		echo "</ul></td>";
 		echo "<td><ul>";
@@ -110,7 +118,7 @@
 	while($module = mysqli_fetch_array($temp)) {
 	 "moduleArray[".$i."]=\"" . $module["name"]."\";" ;
 		$i++;
-		echo "<li>" . $module["name"] . "</li>";
+		echo "<li onClick=\"fillInName('".$module["name"]."')\" >" . $module["name"] . "</li>";
 	}
 		echo "</ul></td>";
 	
