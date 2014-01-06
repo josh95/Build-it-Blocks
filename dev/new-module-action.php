@@ -15,7 +15,7 @@ include("../db-connect.php");
 $name = $_POST["name"];
 
 //this is used to check if there is already a module with the same name
-$temp = mysqli_query($con, "SELECT * FROM `builditblocks`.`module_index` WHERE `name` = \"". $name. "\"");
+$temp = mysqli_query($con, "SELECT * FROM `module_index` WHERE `name` = \"". $name. "\"");
 $nametest = mysqli_fetch_array($temp);
 
 if($nametest){ //if $nametest contains something, that means a module in the database already has the same name
@@ -69,7 +69,7 @@ else{
 
 
 //this query inserts all the variables into the database
-mysqli_query($con, "INSERT INTO `builditblocks`.`module_index` (
+mysqli_query($con, "INSERT INTO `module_index` (
 	`ID`, 
 	`partnerID`, 
 	`name`, 

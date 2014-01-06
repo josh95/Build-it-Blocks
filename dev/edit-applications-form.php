@@ -25,6 +25,7 @@ Editing Instructions
 	echo "Overview text: <textarea name='textoverview' cols='60' rows='10'>".$overview['description']."</textarea><br>\n"; 
 	echo "Overview title: <input type='text' value='".$overview['title']."' name='titleoverview'><br>\n"; 
 	echo "Overview image: <input type='file' name='imageoverview'>\n <br><br>";
+	echo "Link: <input type='text' name='linkoverview'>\n <br><br>";
 	echo "<input type='hidden' name='overviewid' value=\" $id \">"; //pass on the id as a variable, this is used to update the database.
 	
 	$count=0; //will count the number of apps
@@ -35,6 +36,7 @@ Editing Instructions
 		echo "Application ".$count ." text: <textarea name='textapp".$count ."' cols='60' rows='10'>".$app['description']."</textarea><br>\n"; //the name of this variable is "textapp_ where the _ is the app number"
 		echo "Application ".$count ." title: <input value='".$app['title']."' type='text' name='titleapp".$count ."'><br>\n"; //the name of this variable is "titleapp_ where the _ is the app number"
 		echo "Application ".$count ." image: <input type='file' name='imageapp". $count ."'>\n";
+		echo "Application ".$count ." link: <input type='text' name='linkapp". $count ."'>\n";
 		echo "<input type='hidden' name='appid".$count."' value=\" $id \">"; 
 		
 		echo "<br><br>\n";

@@ -15,7 +15,7 @@ echo "module ID: " . $_POST['moduleid'] . "<br>"; //tell user module ID
 if ($_POST['difficulty'] != null){ //checking if anything was written in difficulty field
 	$difficulty= $_POST['difficulty'];
 	echo "changed difficulty to " . $difficulty. "<br>";
-	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `difficulty` = ". $difficulty . " WHERE `module_index`.`ID` =" .$_POST['moduleid']); //moduleID as given by previous page
+	mysqli_query($con, "UPDATE `module_index` SET `difficulty` = ". $difficulty . " WHERE `module_index`.`ID` =" .$_POST['moduleid']); //moduleID as given by previous page
 }
 else
 	echo "No change to difficulty <br>";
@@ -23,7 +23,7 @@ else
 if ($_POST['modulename'] != null){
 	$name= $_POST['modulename'];
 	//this is used to check if there is already a module with the same name
-	$temp = mysqli_query($con, "SELECT * FROM `builditblocks`.`module_index` WHERE `name` = \"". $name. "\"");
+	$temp = mysqli_query($con, "SELECT * FROM `module_index` WHERE `name` = \"". $name. "\"");
 	$nametest = mysqli_fetch_array($temp);
 	
 	if($nametest){ //if $nametest contains something, that means a module in the database already has the same name
@@ -31,7 +31,7 @@ if ($_POST['modulename'] != null){
 	}else
 	{
 		echo "changed Module's name to " . $name. "<br>";
-		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `name` = \"". $name . "\" WHERE `module_index`.`ID` =" .$_POST['moduleid']); //moduleID as given by previous page
+		mysqli_query($con, "UPDATE `module_index` SET `name` = \"". $name . "\" WHERE `module_index`.`ID` =" .$_POST['moduleid']); //moduleID as given by previous page
 	}
 }
 else
@@ -40,7 +40,7 @@ else
 if ($_POST['subcategoryID'] != 0){
 	$subcat= $_POST['subcategoryID'];
 	echo "changed subcategoryID to " . $subcat. "<br>";
-	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `subcategoryID` = \"". $subcat . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
+	mysqli_query($con, "UPDATE `module_index` SET `subcategoryID` = \"". $subcat . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
 }
 else
 	echo "No change to Subcategory ID <br>";
@@ -48,7 +48,7 @@ else
 if ($_POST['year'] != "select" && $_POST['month'] != "select" && $_POST['day'] != "select"){ //user put in a year, month, and day
 	$date = $_POST['year']."-".$_POST['month']."-".$_POST['day'];
 	echo "changed date posted to " . $date. "<br>";
-	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `date-posted` = \"". $date . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
+	mysqli_query($con, "UPDATE `module_index` SET `date-posted` = \"". $date . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
 }
 else
 	echo "No change to date posted.<br>";
@@ -56,7 +56,7 @@ else
 if ($_POST['authorID'] != 0){
 	$author= $_POST['authorID'];
 	echo "changed AuthorID to " . $author. "<br>";
-	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `authorID` = \"". $author . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
+	mysqli_query($con, "UPDATE `module_index` SET `authorID` = \"". $author . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
 }
 else
 	echo "No change to Author ID <br>";
@@ -79,7 +79,7 @@ if ($_FILES["icon"]["size"] < 200000){ //if icon is larger than 195kb, then it i
 		move_uploaded_file($_FILES["icon"]["tmp_name"],
 		"../module-images/icons/" . $_FILES["icon"]["name"]);
 		//update module-index with new file path to icon
-		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `icon` = \" module-images/icons/" . $_FILES["icon"]["name"] . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
+		mysqli_query($con, "UPDATE `module_index` SET `icon` = \" module-images/icons/" . $_FILES["icon"]["name"] . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
 		echo "Stored in: " . "../module-images/icons/" . $_FILES["icon"]["name"];//stored icons folder
     }
 }
@@ -99,14 +99,14 @@ if ($_FILES["tool-tip-icon"]["size"] == 0){ //if icon field was left blank
 		move_uploaded_file($_FILES["tool-tip-icon"]["tmp_name"],
 		"../module-images/icons/tooltip-icons/" . $_FILES["tool-tip-icon"]["name"]);
 		echo "Stored in: " . "../module-images/icons/tooltip-icons/" . $_FILES["tool-tip-icon"]["name"];//stored in icons/tooltip-icons
-		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `icon-tooltip` = \" module-images/icons/tooltip-icons/" . $_FILES["tool-tip-icon"]["name"] . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
+		mysqli_query($con, "UPDATE `module_index` SET `icon-tooltip` = \" module-images/icons/tooltip-icons/" . $_FILES["tool-tip-icon"]["name"] . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
     }
 
 	
 if ($_POST['download-type'] != null){
 	$downloadtype= $_POST['download-type'];
 	echo "<br>changed download type to " . $downloadtype. "<br>";
-	mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `download-type` = \"". $downloadtype . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
+	mysqli_query($con, "UPDATE `module_index` SET `download-type` = \"". $downloadtype . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']); //moduleID as given by previous page
 }
 else
 	echo "<br>No change to download type <br>";
@@ -114,7 +114,7 @@ else
 if ($_FILES["download-file"]["size"] == 0){ //if download field was left blank
 	if ($_POST['delete-download']){ //check if user wants to delete the download entirely
 		echo "download file deleted. <br>";
-		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `download-link` = \"\" , `download-type`=\"\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
+		mysqli_query($con, "UPDATE `module_index` SET `download-link` = \"\" , `download-type`=\"\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
 	}
 	else{
 		echo "No change to download file" . "<br>";
@@ -129,7 +129,7 @@ if ($_FILES["download-file"]["size"] == 0){ //if download field was left blank
 		move_uploaded_file($_FILES["download-file"]["tmp_name"],
 		"../module-resources/" . $_FILES["download-file"]["name"]);
 		echo "Stored in: " . "../module-resources/" . $_FILES["download-file"]["name"];//stored in folder upload, will change to proper folder later
-		mysqli_query($con, "UPDATE `builditblocks`.`module_index` SET `download-link` = \" module-resources/" . $_FILES["download-file"]["name"] . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
+		mysqli_query($con, "UPDATE `module_index` SET `download-link` = \" module-resources/" . $_FILES["download-file"]["name"] . "\" WHERE `module_index`.`ID` =".$_POST['moduleid']);
     }
 	
 

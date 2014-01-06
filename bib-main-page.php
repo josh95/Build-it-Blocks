@@ -5,10 +5,12 @@
 	<link rel="stylesheet" href="menu-stylesheet.css" type="text/css" media="screen"/>
 	<link rel="stylesheet" href="biy-stylesheet.css" type="text/css" media="screen"/>
 	<title>Build-it-Blocks Homepage</title>
+	
 </head>
 <body>
 	<?php include("bib-header-menu.php");?>
-	<hr/>
+	<a class="old-bib-link" href="../members/biy-blocks/localhost/index.html">Looking for the Build-it-Blocks for the RCX system?</a>
+	<br>
 	<div class="bib-description-wrapper">
 		<div class="module-title">
 			Build-It-Blocks is a library of modules that will enable you to build complex projects quickly and reliably.
@@ -70,9 +72,11 @@
 				include("db-connect.php");
 				$temp = mysqli_query($con, "SELECT * FROM `module_index` ORDER BY -`date-posted`"); //order the list of modules my date
 				$info = mysqli_fetch_array( $temp ); //get first module of that list, which will be the newest
+				$temp = mysqli_query($con, "SELECT `picture` FROM `applications` WHERE `moduleID` = " .$info['ID']); //get the application images of this newest module
+				$appimage  = mysqli_fetch_array( $temp ); //select the first application image
 				echo $info['name'];
-				echo "<a href='http://localhost/build-it-blocks/build-it-blocks-overview.php?id=". $info['ID'] ."'>";
-				echo "<img class=\" new-image\" src=\"images/new-module.png\">"; //get the icon-tooltip, which is a promotional image for the module
+				echo "<a href='build-it-blocks-overview.php?id=". $info['ID'] ."'>";
+				echo "<img class=\" new-image\" src=\"". $appimage['picture'] ."\">"; //use the first application image as a promotional image for the module
 				echo "</a>";
 			?>
 		</div>		
@@ -80,7 +84,7 @@
 			Missions:
 			<br/>
 			Cool projects to get you building!
-			<img src="http://build-it-yourself.com/images/pirate-team-max-devin.jpg">
+			<a href="http://build-it-yourself.com/members/biy-projects/index-projects/index-project.html"><img src="http://build-it-yourself.com/images/pirate-team-max-devin.jpg"></a>
 		</div>
 	</div>
 	<div class="bottom-info"><?php include("biy-bottom-info.html"); ?></div>

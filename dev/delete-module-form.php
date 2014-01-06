@@ -15,7 +15,7 @@
 		$delete = $_POST["delete"];
 		include("../db-connect.php");
 		//checks if module name user typed in is valid and if not returns error message
-		$temp = mysqli_query($con, "SELECT * FROM `builditblocks`.`module_index` WHERE `name` = \"". $delete. "\"");
+		$temp = mysqli_query($con, "SELECT * FROM `module_index` WHERE `name` = \"". $delete. "\"");
 		$module = mysqli_fetch_array($temp);
 		if($module["name"] == null){
 		die("Sorry we could not find the module ".$delete.". Please try again");

@@ -31,7 +31,7 @@ body{
 
 .bib-description-wrapper{
 	width: 800px;
-	margin: 50px auto;
+	margin: 0px auto;
 }
 
 h1 {
@@ -452,4 +452,14 @@ hr{
 	font-weight: bold; 
 	font-size: 16pt;
 	margin-top: -10px;
+}
+
+.old-bib-link{
+	font-size:8pt;
+	width:800px;
+	margin:auto;
+	display:block;
+}
+.old-bib-link:hover{
+	color: blue;
 }

@@ -36,7 +36,7 @@ for adding applications through "edit module" rather than "add module"-->
 		"../module-images/applications-img/". $typename . "/" . $_FILES["appimg".$x]["name"]);
 		//update applications with new file path to image
 		$appimgpath = "module-images/applications-img/". $typename . "/" .$_FILES["appimg".$x]["name"];
-		mysqli_query($con, "INSERT INTO `builditblocks`.`applications` (`ID`, `moduleID`, `picture`, `description`, `title`, `link`, `youtube-embedID`) 
+		mysqli_query($con, "INSERT INTO `applications` (`ID`, `moduleID`, `picture`, `description`, `title`, `link`, `youtube-embedID`) 
 		VALUES (NULL,\"". $moduleid."\",\"". $appimgpath."\",\"". $apptext."\", \"".$apptitle."\", NULL, NULL);");
 		echo "application " . $x . " uploaded.<br>";
 	}

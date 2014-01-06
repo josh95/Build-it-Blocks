@@ -21,7 +21,12 @@
 			$i=0;
 			while($app = mysqli_fetch_array($temp)){ //every application has a title and a description; this loop fills them all :)
 				echo "titleArr[".$i."]='" . $app['title'] . "';" ;
-				echo "descriptionArr[".$i."]='" . $app['description'] . "';" ;
+				if (isset($app['link'])){ //if there is a link some other page to be included with this module...
+					echo "descriptionArr[".$i."]='" . $app['description'] ." <br><br><a href=\"".$app['link']."\">Click Here!</a>';" ; //add a link to the caption
+				}else{ //otherwise, if there's no link...
+					echo "descriptionArr[".$i."]='" . $app['description'] . "';" ; //don't put a link in the caption
+				}
+				
 				$i++;
 			}
 		?>

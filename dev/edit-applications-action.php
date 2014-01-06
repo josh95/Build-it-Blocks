@@ -24,7 +24,7 @@
 			if ($_POST['titleoverview'] != null){
 				$overview= $_POST['titleoverview'];
 				echo "changed Overview title to " . $overview. "<br>";
-				mysqli_query($con, "UPDATE `builditblocks`.`applications` SET `title` = \"". $overview . "\" WHERE `ID` =".$_POST['overviewid']); //overviewID as given by previous page
+				mysqli_query($con, "UPDATE `applications` SET `title` = \"". $overview . "\" WHERE `ID` =".$_POST['overviewid']); //overviewID as given by previous page
 			}
 			else
 				echo "No change to Overview title<br>";
@@ -32,11 +32,18 @@
 			if ($_POST['textoverview'] != null){
 				$overview= $_POST['textoverview'];
 				echo "changed Overview text to " . $overview. "<br>";
-				mysqli_query($con, "UPDATE `builditblocks`.`applications` SET `description` = \"". $overview . "\" WHERE `ID` =".$_POST['overviewid']); //overviewID as given by previous page
+				mysqli_query($con, "UPDATE `applications` SET `description` = \"". $overview . "\" WHERE `ID` =".$_POST['overviewid']); //overviewID as given by previous page
 			}
 			else
 				echo "No change to overview description<br>";
-		
+				
+			if ($_POST['linkoverview'] != null){
+				$overview= $_POST['linkoverview'];
+				echo "changed Overview link to " . $overview. "<br>";
+				mysqli_query($con, "UPDATE `applications` SET `link` = \"". $overview . "\" WHERE `ID` =".$_POST['overviewid']); //overviewID as given by previous page
+			}
+			else
+				echo "No change to overview description<br>";
 
 
 			if ($_FILES["imageoverview"]["size"] < 2000000){ //if icon is larger than 1950kb, then it is too big. Tell user that icon is too big
@@ -52,7 +59,7 @@
 					move_uploaded_file($_FILES["imageoverview"]["tmp_name"],
 					"../module-images/applications-img/". $typename ."/" . $_FILES["imageoverview"]["name"]);
 					//update apps with new file path to image
-					mysqli_query($con, "UPDATE `builditblocks`.`applications` SET `picture` = \"module-images/applications-img/". $typename ."/" . $_FILES["imageoverview"]["name"] . "\" WHERE `ID` =".$_POST['overviewid']);
+					mysqli_query($con, "UPDATE `applications` SET `picture` = \"module-images/applications-img/". $typename ."/" . $_FILES["imageoverview"]["name"] . "\" WHERE `ID` =".$_POST['overviewid']);
 					echo "Stored in: " . "module-images/applications-img/". $typename ."/" . $_FILES["imageoverview"]["name"];//stored in folder upload, will change to proper folder later
 					echo "<br>";
 				}
@@ -66,7 +73,7 @@
 			if ($_POST['titleapp'.$i] != null){
 				$app= $_POST['titleapp'.$i];
 				echo "changed Application $i to " . $app. "<br>";
-				mysqli_query($con, "UPDATE `builditblocks`.`applications` SET `title` = \"". $app . "\" WHERE `ID` =".$_POST['appid'. $i]); //appID as given by previous page
+				mysqli_query($con, "UPDATE `applications` SET `title` = \"". $app . "\" WHERE `ID` =".$_POST['appid'. $i]); //appID as given by previous page
 			}
 			else
 				echo "No change to application $i title<br>";
@@ -74,12 +81,18 @@
 			if ($_POST['textapp'.$i] != null){
 				$app= $_POST['textapp'.$i];
 				echo "changed Application $i to " . $app. "<br>";
-				mysqli_query($con, "UPDATE `builditblocks`.`applications` SET `description` = \"". $app . "\" WHERE `ID` =".$_POST['appid'. $i]); //appID as given by previous page
+				mysqli_query($con, "UPDATE `applications` SET `description` = \"". $app . "\" WHERE `ID` =".$_POST['appid'. $i]); //appID as given by previous page
 			}
 			else
 				echo "No change to application $i description<br>";
 		
-
+			if ($_POST['linkapp'.$i] != null){
+				$app= $_POST['linkapp'.$i];
+				echo "changed Application $i to " . $app. "<br>";
+				mysqli_query($con, "UPDATE `applications` SET `link` = \"". $app . "\" WHERE `ID` =".$_POST['appid'. $i]); //appID as given by previous page
+			}
+			else
+				echo "No change to application $i description<br>";
 
 			if ($_FILES["imageapp" . $i]["size"] < 2000000){ //if icon is larger than 1950kb, then it is too big. Tell user that icon is too big
 				if ($_FILES["imageapp" . $i]["size"] == 0){ //if icon field was left blank
@@ -94,7 +107,7 @@
 					move_uploaded_file($_FILES["imageapp".$i]["tmp_name"],
 					"../module-images/applications-img/". $typename ."/" . $_FILES["imageapp".$i]["name"]);
 					//update apps with new file path to image
-					mysqli_query($con, "UPDATE `builditblocks`.`applications` SET `picture` = \"module-images/applications-img/". $typename ."/" . $_FILES["imageapp".$i]["name"] . "\" WHERE `ID` =".$_POST['appid'. $i]);
+					mysqli_query($con, "UPDATE `applications` SET `picture` = \"module-images/applications-img/". $typename ."/" . $_FILES["imageapp".$i]["name"] . "\" WHERE `ID` =".$_POST['appid'. $i]);
 					echo "Stored in: " . "module-images/applications-img/". $typename ."/" . $_FILES["imageapp".$i]["name"];//stored in folder upload, will change to proper folder later
 					echo "<br>";
 				}

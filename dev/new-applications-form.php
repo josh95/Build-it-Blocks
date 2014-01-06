@@ -21,6 +21,7 @@
 		<input type="hidden" name="loggedin" value="1"> <!--to confirm that the user has logged in to next page-->
 		Overview Image: <input type="file" name="overviewimg"/>   Text: <textarea name='overviewtext' cols='40' rows='5'></textarea>  <br>
 		Title: <input type="text" name="overviewtitle"><br/><br/>
+		Link: <input type="text" name="overviewlink"><br/><br/>
 		<?php
 		$moduleid= $_POST["moduleid"];
 		$noofapps = $_POST["noofapps"];
@@ -29,7 +30,8 @@
 		for ($x=1; $x<=$noofapps; $x++) {
 		echo "Application " . $x . " image: <input type='file' name='appimg" . $x . "'>  
 		Text: <textarea name='apptext".$x."' cols='40' rows='5'></textarea>  <br>
-		Title: <input type='text' name='apptitle" . $x . "'> <br/><br/>";
+		Title: <input type='text' name='apptitle" . $x . "'> <br/><br/>
+		Link: <input type='text' name='applink" . $x . "'> <br/><br/>";
 		}
 		//pass on the number of apps and module id
 		echo "<input type=\"hidden\" name=\"moduleid\" value=\"". $moduleid ."\">";

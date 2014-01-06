@@ -32,7 +32,7 @@
 		"../module-images/instruction-img/". $typename . "/" . $_FILES["stepimg".$x]["name"]);
 		//update steps with new file path to image
 		$stepimgpath = "module-images/instruction-img/". $typename . "/" .$_FILES["stepimg".$x]["name"];
-		mysqli_query($con, "INSERT INTO `builditblocks`.`steps` (`ID`, `moduleID`,`step-number`,`image-path`, `step-description`, `related-links`, `rcxcode-robolab`,`rcxcode-mindstorms`) 
+		mysqli_query($con, "INSERT INTO `steps` (`ID`, `moduleID`,`step-number`,`image-path`, `step-description`, `related-links`, `rcxcode-robolab`,`rcxcode-mindstorms`) 
 		VALUES (NULL,\"". $moduleid."\",". $x .",\"". $stepimgpath."\",\"". $steptext."\", NULL, NULL,NULL);");
 		echo "step " . $x . " uploaded.<br>";
 	}

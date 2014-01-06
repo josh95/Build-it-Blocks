@@ -27,13 +27,18 @@
 	//this part is for inserting the overview
 	$overviewtext = $_POST["overviewtext"];
 	$overviewtitle = $_POST["overviewtitle"];
+	if(isset($_POST["overviewlink"])){ //user submitted a link?
+		$overviewlink=$_POST["overviewlink"];
+	}else{
+		$overviewlink="";
+	}
 	
 	move_uploaded_file($_FILES["overviewimg"]["tmp_name"],
 	"../module-images/applications-img/". $typename . "/" . $_FILES["overviewimg"]["name"]);
 	//update applications with new file path to image
 	$overviewimgpath = "module-images/applications-img/". $typename . "/" .$_FILES["overviewimg"]["name"];
-	mysqli_query($con, "INSERT INTO `builditblocks`.`applications` (`ID`, `moduleID`, `picture`, `description`, `title`, `link`, `youtube-embedID`) 
-	VALUES (NULL,\"". $moduleid."\",\"". $overviewimgpath."\",\"". $overviewtext."\", \"".$overviewtitle."\", NULL, NULL);");
+	mysqli_query($con, "INSERT INTO `applications` (`ID`, `moduleID`, `picture`, `description`, `title`, `link`, `youtube-embedID`) 
+	VALUES (NULL,\"". $moduleid."\",\"". $overviewimgpath."\",\"". $overviewtext."\", \"".$overviewtitle."\", \"".$overviewlink."\", NULL);");
 	
 	echo "overview uploaded. <br>";
 	
@@ -43,12 +48,18 @@
 		$apptext = $_POST["apptext".$x];
 		$apptitle = $_POST["apptitle".$x];
 		
+		if(isset($_POST["applink".$x])){ //user submitted a link?
+			$applink=$_POST["applink".$x];
+		}else{
+			$applink="";
+		}
+		
 		move_uploaded_file($_FILES["appimg".$x]["tmp_name"],
 		"../module-images/applications-img/". $typename . "/" . $_FILES["appimg".$x]["name"]);
 		//update applications with new file path to image
 		$appimgpath = "module-images/applications-img/". $typename . "/" .$_FILES["appimg".$x]["name"];
-		mysqli_query($con, "INSERT INTO `builditblocks`.`applications` (`ID`, `moduleID`, `picture`, `description`, `title`, `link`, `youtube-embedID`) 
-		VALUES (NULL,\"". $moduleid."\",\"". $appimgpath."\",\"". $apptext."\", \"".$apptitle."\", NULL, NULL);");
+		mysqli_query($con, "INSERT INTO `applications` (`ID`, `moduleID`, `picture`, `description`, `title`, `link`, `youtube-embedID`) 
+		VALUES (NULL,\"". $moduleid."\",\"". $appimgpath."\",\"". $apptext."\", \"".$apptitle."\", \"".$applink."\", NULL);");
 		echo "application " . $x . " uploaded.<br>";
 	}
 
